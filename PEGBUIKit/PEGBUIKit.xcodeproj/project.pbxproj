@@ -18,6 +18,8 @@
 		BF2FABE52B88E7C500F45FED /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABE42B88E7C500F45FED /* UIConstants.swift */; };
 		BF2FABEC2B88E9B600F45FED /* PEGBUICircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABEB2B88E9B600F45FED /* PEGBUICircleImageView.swift */; };
 		BF2FABEF2B88EA0300F45FED /* PEGBUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */; };
+		BFC6AF052B89A20300E3D2E7 /* HorizontalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */; };
+		BFC6AF1B2B89CEAB00E3D2E7 /* PEGBAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		BF2FABE42B88E7C500F45FED /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		BF2FABEB2B88E9B600F45FED /* PEGBUICircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUICircleImageView.swift; sourceTree = "<group>"; };
 		BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIButton.swift; sourceTree = "<group>"; };
+		BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViews.swift; sourceTree = "<group>"; };
+		BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEGBAvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 		BF2FAB7D2B88E37E00F45FED /* PEGBUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AF1E2B89D3C900E3D2E7 /* UIView */,
+				BFC6AF032B89A1F200E3D2E7 /* HorizontalViews */,
 				BF2FABED2B88E9F600F45FED /* UIButton */,
 				BF2FABEA2B88E9A200F45FED /* UIImageView */,
 				BF2FABE32B88E7B400F45FED /* Constants */,
@@ -144,6 +150,22 @@
 				BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */,
 			);
 			path = UIButton;
+			sourceTree = "<group>";
+		};
+		BFC6AF032B89A1F200E3D2E7 /* HorizontalViews */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */,
+			);
+			path = HorizontalViews;
+			sourceTree = "<group>";
+		};
+		BFC6AF1E2B89D3C900E3D2E7 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,10 +279,12 @@
 			files = (
 				BF2FABDE2B88E54E00F45FED /* UIView+Extension.swift in Sources */,
 				BF2FAB802B88E37E00F45FED /* PEGBUIKit.docc in Sources */,
+				BFC6AF052B89A20300E3D2E7 /* HorizontalViews.swift in Sources */,
 				BF2FABDB2B88E43E00F45FED /* PEGBUITextField.swift in Sources */,
 				BF2FABE02B88E6D300F45FED /* UIColor+Extension.swift in Sources */,
 				BF2FABE22B88E72C00F45FED /* UIColor+AppConfig.swift in Sources */,
 				BF2FABEF2B88EA0300F45FED /* PEGBUIButton.swift in Sources */,
+				BFC6AF1B2B89CEAB00E3D2E7 /* PEGBAvatarView.swift in Sources */,
 				BF2FABEC2B88E9B600F45FED /* PEGBUICircleImageView.swift in Sources */,
 				BF2FABE52B88E7C500F45FED /* UIConstants.swift in Sources */,
 			);

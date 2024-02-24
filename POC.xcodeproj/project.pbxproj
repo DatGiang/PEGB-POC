@@ -17,6 +17,10 @@
 		BF2FABE72B88E88B00F45FED /* PEGBUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FABD62B88E41100F45FED /* PEGBUIKit.framework */; };
 		BF2FABE82B88E88B00F45FED /* PEGBUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FABD62B88E41100F45FED /* PEGBUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFC6AF002B899FED00E3D2E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */; };
+		BFC6AF0C2B89A4BC00E3D2E7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF0B2B89A4BC00E3D2E7 /* MainTabController.swift */; };
+		BFC6AF142B89C8A000E3D2E7 /* PEGBUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF132B89C8A000E3D2E7 /* PEGBUINavigationBar.swift */; };
+		BFC6AF192B89C99200E3D2E7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF182B89C99200E3D2E7 /* UIImage+Extension.swift */; };
+		BFC6AF1D2B89D15F00E3D2E7 /* TopHeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1C2B89D15F00E3D2E7 /* TopHeadlinesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		BF2FABC72B88E40C00F45FED /* PEGBCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PEGBCore.xcodeproj; path = PEGBCore/PEGBCore.xcodeproj; sourceTree = "<group>"; };
 		BF2FABD02B88E41100F45FED /* PEGBUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PEGBUIKit.xcodeproj; path = PEGBUIKit/PEGBUIKit.xcodeproj; sourceTree = "<group>"; };
 		BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BFC6AF0B2B89A4BC00E3D2E7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		BFC6AF132B89C8A000E3D2E7 /* PEGBUINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEGBUINavigationBar.swift; sourceTree = "<group>"; };
+		BFC6AF182B89C99200E3D2E7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		BFC6AF1C2B89D15F00E3D2E7 /* TopHeadlinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlinesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		BF2FABA92B88E3A600F45FED /* POC */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AF172B89C98600E3D2E7 /* Extensions */,
 				BF2FABBE2B88E3FF00F45FED /* Components */,
 				BF2FABAA2B88E3A600F45FED /* AppDelegate.swift */,
 				BF2FABAE2B88E3A600F45FED /* ViewController.swift */,
@@ -127,6 +136,8 @@
 		BF2FABBE2B88E3FF00F45FED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AF112B89C86000E3D2E7 /* Views */,
+				BFC6AF062B89A4AF00E3D2E7 /* MainTabController */,
 				BFC6AEFA2B899FD600E3D2E7 /* BaseView */,
 				BF2FABBF2B88E3FF00F45FED /* NewsDetails */,
 				BF2FABC02B88E3FF00F45FED /* TopHeadlines */,
@@ -146,6 +157,7 @@
 		BF2FABC02B88E3FF00F45FED /* TopHeadlines */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AF1C2B89D15F00E3D2E7 /* TopHeadlinesViewController.swift */,
 			);
 			path = TopHeadlines;
 			sourceTree = "<group>";
@@ -197,6 +209,38 @@
 				BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */,
 			);
 			path = BaseView;
+			sourceTree = "<group>";
+		};
+		BFC6AF062B89A4AF00E3D2E7 /* MainTabController */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF0B2B89A4BC00E3D2E7 /* MainTabController.swift */,
+			);
+			path = MainTabController;
+			sourceTree = "<group>";
+		};
+		BFC6AF112B89C86000E3D2E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF122B89C86700E3D2E7 /* PEGBUINavigationBar */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BFC6AF122B89C86700E3D2E7 /* PEGBUINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF132B89C8A000E3D2E7 /* PEGBUINavigationBar.swift */,
+			);
+			path = PEGBUINavigationBar;
+			sourceTree = "<group>";
+		};
+		BFC6AF172B89C98600E3D2E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF182B89C99200E3D2E7 /* UIImage+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,8 +356,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC6AF142B89C8A000E3D2E7 /* PEGBUINavigationBar.swift in Sources */,
 				BFC6AF002B899FED00E3D2E7 /* BaseViewController.swift in Sources */,
+				BFC6AF1D2B89D15F00E3D2E7 /* TopHeadlinesViewController.swift in Sources */,
 				BF2FABC62B88E3FF00F45FED /* LoginViewController.swift in Sources */,
+				BFC6AF192B89C99200E3D2E7 /* UIImage+Extension.swift in Sources */,
+				BFC6AF0C2B89A4BC00E3D2E7 /* MainTabController.swift in Sources */,
 				BF2FABAF2B88E3A600F45FED /* ViewController.swift in Sources */,
 				BF2FABAB2B88E3A600F45FED /* AppDelegate.swift in Sources */,
 				BF2FABC52B88E3FF00F45FED /* LoginViewModel.swift in Sources */,

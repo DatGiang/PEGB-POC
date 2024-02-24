@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        navigationController?.pushViewController(LoginViewController(), animated: true)
+        navigationController?.pushViewController(MainTabController(), animated: true)
     }
 
 
