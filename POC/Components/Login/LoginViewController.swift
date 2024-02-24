@@ -9,7 +9,7 @@ import Foundation
 import PEGBUIKit
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     private lazy var logoImageView: PEGBUICircleImageView = {
         let view = PEGBUICircleImageView(image: .init(named: "ic_logo"))
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +45,6 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func setupViews() {
-        view.backgroundColor = .white
         setupLogoImageView()
         setupUsernameTextField()
         setupPasswordTextField()
@@ -55,17 +54,17 @@ extension LoginViewController {
     private func setupLogoImageView() {
         view.addSubview(logoImageView)
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: UIConstants.Padding.big),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: UIConstants.Padding.large),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 100),
+            logoImageView.heightAnchor.constraint(equalToConstant: UIConstants.Sizes.logoSize.height),
         ])
     }
     
     private func setupUsernameTextField() {
         view.addSubview(usernameTextField)
         NSLayoutConstraint.activate([
-            usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: UIConstants.Padding.medium),
+            usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: UIConstants.Padding.big),
             usernameTextField.centerXAnchor.constraint(equalTo: logoImageView.centerXAnchor),
             usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UIConstants.Padding.medium)
         ])
@@ -74,7 +73,7 @@ extension LoginViewController {
     private func setupPasswordTextField() {
         view.addSubview(passwordTextField)
         NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: UIConstants.Padding.medium),
+            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: UIConstants.Padding.big),
             passwordTextField.centerXAnchor.constraint(equalTo: usernameTextField.centerXAnchor),
             passwordTextField.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor)
         ])
@@ -83,7 +82,7 @@ extension LoginViewController {
     private func setupLoginButton() {
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: UIConstants.Padding.medium),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: UIConstants.Padding.extraLarge),
             loginButton.centerXAnchor.constraint(equalTo: passwordTextField.centerXAnchor),
             loginButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor)
         ])

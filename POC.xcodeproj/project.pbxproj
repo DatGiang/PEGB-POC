@@ -16,6 +16,7 @@
 		BF2FABC62B88E3FF00F45FED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABC42B88E3FF00F45FED /* LoginViewController.swift */; };
 		BF2FABE72B88E88B00F45FED /* PEGBUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FABD62B88E41100F45FED /* PEGBUIKit.framework */; };
 		BF2FABE82B88E88B00F45FED /* PEGBUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FABD62B88E41100F45FED /* PEGBUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFC6AF002B899FED00E3D2E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		BF2FABC42B88E3FF00F45FED /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF2FABC72B88E40C00F45FED /* PEGBCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PEGBCore.xcodeproj; path = PEGBCore/PEGBCore.xcodeproj; sourceTree = "<group>"; };
 		BF2FABD02B88E41100F45FED /* PEGBUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PEGBUIKit.xcodeproj; path = PEGBUIKit/PEGBUIKit.xcodeproj; sourceTree = "<group>"; };
+		BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		BF2FABBE2B88E3FF00F45FED /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AEFA2B899FD600E3D2E7 /* BaseView */,
 				BF2FABBF2B88E3FF00F45FED /* NewsDetails */,
 				BF2FABC02B88E3FF00F45FED /* TopHeadlines */,
 				BF2FABC12B88E3FF00F45FED /* SavedNews */,
@@ -186,6 +189,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC6AEFA2B899FD600E3D2E7 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC6AF002B899FED00E3D2E7 /* BaseViewController.swift in Sources */,
 				BF2FABC62B88E3FF00F45FED /* LoginViewController.swift in Sources */,
 				BF2FABAF2B88E3A600F45FED /* ViewController.swift in Sources */,
 				BF2FABAB2B88E3A600F45FED /* AppDelegate.swift in Sources */,

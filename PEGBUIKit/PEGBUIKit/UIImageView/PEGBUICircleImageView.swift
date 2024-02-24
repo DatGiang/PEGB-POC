@@ -32,7 +32,7 @@ public class PEGBUICircleImageView: UIImageView {
 
 extension PEGBUICircleImageView {
     private func setupViews() {
-        contentMode = .scaleAspectFill
+        contentMode = .scaleAspectFit
         border(color: .primary)
     }
 }
