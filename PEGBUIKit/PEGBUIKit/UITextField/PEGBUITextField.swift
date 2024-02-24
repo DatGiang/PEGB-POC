@@ -10,11 +10,21 @@ import UIKit
 
 public class PEGBUITextField: UIView {
     public var placeholder: String? {
-        get { return textField.placeholder }
+        get { textField.placeholder }
         set {
             let string = newValue ?? ""
             textField.placeholder = string
         }
+    }
+    
+    public var isSecureTextEntry: Bool {
+        get { textField.isSecureTextEntry }
+        set { textField.isSecureTextEntry = newValue }
+    }
+    
+    public var text: String {
+        get { textField.text ?? "" }
+        set { textField.text = newValue }
     }
     
     private lazy var backgroundView: UIView = {

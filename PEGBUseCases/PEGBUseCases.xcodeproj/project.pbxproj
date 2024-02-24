@@ -13,6 +13,9 @@
 		BFC6AFDA2B8A666600E3D2E7 /* PEGBUseCases.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC6AFCC2B8A666600E3D2E7 /* PEGBUseCases.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFC6AFF12B8A66AD00E3D2E7 /* PredefineDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFF02B8A66AD00E3D2E7 /* PredefineDataUseCase.swift */; };
 		BFC6AFF42B8A66C400E3D2E7 /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AFF32B8A66C400E3D2E7 /* PEGBCore.framework */; };
+		BFC6AFFA2B8A679900E3D2E7 /* UserAuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFF92B8A679900E3D2E7 /* UserAuthenticationUseCase.swift */; };
+		BFC6AFFD2B8A693C00E3D2E7 /* UserRepositoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFFC2B8A693C00E3D2E7 /* UserRepositoryHelper.swift */; };
+		BFC6B0002B8A6AD600E3D2E7 /* UserAuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFFF2B8A6AD600E3D2E7 /* UserAuthenticationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 		BFC6AFD82B8A666600E3D2E7 /* PEGBUseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUseCasesTests.swift; sourceTree = "<group>"; };
 		BFC6AFF02B8A66AD00E3D2E7 /* PredefineDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredefineDataUseCase.swift; sourceTree = "<group>"; };
 		BFC6AFF32B8A66C400E3D2E7 /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC6AFF92B8A679900E3D2E7 /* UserAuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationUseCase.swift; sourceTree = "<group>"; };
+		BFC6AFFC2B8A693C00E3D2E7 /* UserRepositoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryHelper.swift; sourceTree = "<group>"; };
+		BFC6AFFF2B8A6AD600E3D2E7 /* UserAuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 		BFC6AFCB2B8A666600E3D2E7 /* PEGBUseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AFFE2B8A6AB300E3D2E7 /* Errors */,
+				BFC6AFFB2B8A692400E3D2E7 /* Helpers */,
 				BFC6AFEC2B8A666B00E3D2E7 /* UseCases */,
 				BFC6AFCC2B8A666600E3D2E7 /* PEGBUseCases.h */,
 				BFC6AFCD2B8A666600E3D2E7 /* PEGBUseCases.docc */,
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC6AFF02B8A66AD00E3D2E7 /* PredefineDataUseCase.swift */,
+				BFC6AFF92B8A679900E3D2E7 /* UserAuthenticationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -106,6 +115,22 @@
 				BFC6AFF32B8A66C400E3D2E7 /* PEGBCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC6AFFB2B8A692400E3D2E7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AFFC2B8A693C00E3D2E7 /* UserRepositoryHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BFC6AFFE2B8A6AB300E3D2E7 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AFFF2B8A6AD600E3D2E7 /* UserAuthenticationError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,8 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC6AFFD2B8A693C00E3D2E7 /* UserRepositoryHelper.swift in Sources */,
 				BFC6AFF12B8A66AD00E3D2E7 /* PredefineDataUseCase.swift in Sources */,
 				BFC6AFCE2B8A666600E3D2E7 /* PEGBUseCases.docc in Sources */,
+				BFC6AFFA2B8A679900E3D2E7 /* UserAuthenticationUseCase.swift in Sources */,
+				BFC6B0002B8A6AD600E3D2E7 /* UserAuthenticationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

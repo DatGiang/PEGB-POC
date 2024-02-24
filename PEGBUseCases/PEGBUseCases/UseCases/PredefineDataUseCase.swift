@@ -9,7 +9,7 @@ import Foundation
 import PEGBCore
 import Storage
 
-public class PredefineDataUseCase: NSObject, Startable {
+public struct PredefineDataUseCase: Startable {
     private let userRepository: CoreDataRepository<CDUser> = .init(context: CoreDataManagerImpl.shared.backgroundManagedObjectContext)
     private static let users: [(username: String, password: String)] = [
         ("usera", "passworda"),
@@ -23,10 +23,7 @@ public class PredefineDataUseCase: NSObject, Startable {
 
 extension PredefineDataUseCase {
     private func predefineUsersIfNeeded() {
-        userRepository.fetch { [weak self] in
-            guard let self else {
-                return
-            }
+        userRepository.fetch {
             switch $0 {
             case .failure:
                 self.addPredefinedUsers()

@@ -28,6 +28,7 @@ class LoginViewController: BaseViewController, View {
         let view = PEGBUITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Password"
+        view.isSecureTextEntry = true
         return view
     }()
 
@@ -61,7 +62,7 @@ class LoginViewController: BaseViewController, View {
     }
 
     @objc private func didTapLogin() {
-        viewModel?.login()
+        viewModel?.login(username: usernameTextField.text, password: passwordTextField.text)
     }
 }
 
