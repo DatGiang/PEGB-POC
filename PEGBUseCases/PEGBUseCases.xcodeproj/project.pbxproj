@@ -7,197 +7,176 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF2FAB4E2B88E29B00F45FED /* PEGBCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = BF2FAB4D2B88E29B00F45FED /* PEGBCore.docc */; };
-		BF2FAB542B88E29C00F45FED /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FAB492B88E29B00F45FED /* PEGBCore.framework */; };
-		BF2FAB592B88E29C00F45FED /* PEGBCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FAB582B88E29C00F45FED /* PEGBCoreTests.swift */; };
-		BF2FAB5A2B88E29C00F45FED /* PEGBCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2FAB4C2B88E29B00F45FED /* PEGBCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BFC6AF3B2B8A35E900E3D2E7 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF3A2B8A35E900E3D2E7 /* Dynamic.swift */; };
-		BFC6AF402B8A390600E3D2E7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF3F2B8A390600E3D2E7 /* ViewModel.swift */; };
-		BFC6AF432B8A393000E3D2E7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF422B8A393000E3D2E7 /* View.swift */; };
-		BFC6AFEF2B8A669900E3D2E7 /* Startable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFEE2B8A669900E3D2E7 /* Startable.swift */; };
+		BFC6AFCE2B8A666600E3D2E7 /* PEGBUseCases.docc in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFCD2B8A666600E3D2E7 /* PEGBUseCases.docc */; };
+		BFC6AFD42B8A666600E3D2E7 /* PEGBUseCases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AFC92B8A666600E3D2E7 /* PEGBUseCases.framework */; };
+		BFC6AFD92B8A666600E3D2E7 /* PEGBUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFD82B8A666600E3D2E7 /* PEGBUseCasesTests.swift */; };
+		BFC6AFDA2B8A666600E3D2E7 /* PEGBUseCases.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC6AFCC2B8A666600E3D2E7 /* PEGBUseCases.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFC6AFF12B8A66AD00E3D2E7 /* PredefineDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AFF02B8A66AD00E3D2E7 /* PredefineDataUseCase.swift */; };
+		BFC6AFF42B8A66C400E3D2E7 /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AFF32B8A66C400E3D2E7 /* PEGBCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BF2FAB552B88E29C00F45FED /* PBXContainerItemProxy */ = {
+		BFC6AFD52B8A666600E3D2E7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BF2FAB402B88E29B00F45FED /* Project object */;
+			containerPortal = BFC6AFC02B8A666600E3D2E7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BF2FAB482B88E29B00F45FED;
-			remoteInfo = PEGBCore;
+			remoteGlobalIDString = BFC6AFC82B8A666600E3D2E7;
+			remoteInfo = PEGBUseCases;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BF2FAB492B88E29B00F45FED /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF2FAB4C2B88E29B00F45FED /* PEGBCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEGBCore.h; sourceTree = "<group>"; };
-		BF2FAB4D2B88E29B00F45FED /* PEGBCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PEGBCore.docc; sourceTree = "<group>"; };
-		BF2FAB532B88E29C00F45FED /* PEGBCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PEGBCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF2FAB582B88E29C00F45FED /* PEGBCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBCoreTests.swift; sourceTree = "<group>"; };
-		BFC6AF3A2B8A35E900E3D2E7 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
-		BFC6AF3F2B8A390600E3D2E7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		BFC6AF422B8A393000E3D2E7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		BFC6AFEE2B8A669900E3D2E7 /* Startable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startable.swift; sourceTree = "<group>"; };
+		BFC6AFC92B8A666600E3D2E7 /* PEGBUseCases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PEGBUseCases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC6AFCC2B8A666600E3D2E7 /* PEGBUseCases.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEGBUseCases.h; sourceTree = "<group>"; };
+		BFC6AFCD2B8A666600E3D2E7 /* PEGBUseCases.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PEGBUseCases.docc; sourceTree = "<group>"; };
+		BFC6AFD32B8A666600E3D2E7 /* PEGBUseCasesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PEGBUseCasesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC6AFD82B8A666600E3D2E7 /* PEGBUseCasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUseCasesTests.swift; sourceTree = "<group>"; };
+		BFC6AFF02B8A66AD00E3D2E7 /* PredefineDataUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredefineDataUseCase.swift; sourceTree = "<group>"; };
+		BFC6AFF32B8A66C400E3D2E7 /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF2FAB462B88E29B00F45FED /* Frameworks */ = {
+		BFC6AFC62B8A666600E3D2E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC6AFF42B8A66C400E3D2E7 /* PEGBCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF2FAB502B88E29C00F45FED /* Frameworks */ = {
+		BFC6AFD02B8A666600E3D2E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2FAB542B88E29C00F45FED /* PEGBCore.framework in Frameworks */,
+				BFC6AFD42B8A666600E3D2E7 /* PEGBUseCases.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF2FAB3F2B88E29B00F45FED = {
+		BFC6AFBF2B8A666600E3D2E7 = {
 			isa = PBXGroup;
 			children = (
-				BF2FAB4B2B88E29B00F45FED /* PEGBCore */,
-				BF2FAB572B88E29C00F45FED /* PEGBCoreTests */,
-				BF2FAB4A2B88E29B00F45FED /* Products */,
+				BFC6AFCB2B8A666600E3D2E7 /* PEGBUseCases */,
+				BFC6AFD72B8A666600E3D2E7 /* PEGBUseCasesTests */,
+				BFC6AFCA2B8A666600E3D2E7 /* Products */,
+				BFC6AFF22B8A66C400E3D2E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		BF2FAB4A2B88E29B00F45FED /* Products */ = {
+		BFC6AFCA2B8A666600E3D2E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF2FAB492B88E29B00F45FED /* PEGBCore.framework */,
-				BF2FAB532B88E29C00F45FED /* PEGBCoreTests.xctest */,
+				BFC6AFC92B8A666600E3D2E7 /* PEGBUseCases.framework */,
+				BFC6AFD32B8A666600E3D2E7 /* PEGBUseCasesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BF2FAB4B2B88E29B00F45FED /* PEGBCore */ = {
+		BFC6AFCB2B8A666600E3D2E7 /* PEGBUseCases */ = {
 			isa = PBXGroup;
 			children = (
-				BFC6AFED2B8A669900E3D2E7 /* Startable */,
-				BFC6AF412B8A391E00E3D2E7 /* View */,
-				BFC6AF3E2B8A38EB00E3D2E7 /* ViewModel */,
-				BFC6AF392B8A35E900E3D2E7 /* Dynamic */,
-				BF2FAB4C2B88E29B00F45FED /* PEGBCore.h */,
-				BF2FAB4D2B88E29B00F45FED /* PEGBCore.docc */,
+				BFC6AFEC2B8A666B00E3D2E7 /* UseCases */,
+				BFC6AFCC2B8A666600E3D2E7 /* PEGBUseCases.h */,
+				BFC6AFCD2B8A666600E3D2E7 /* PEGBUseCases.docc */,
 			);
-			path = PEGBCore;
+			path = PEGBUseCases;
 			sourceTree = "<group>";
 		};
-		BF2FAB572B88E29C00F45FED /* PEGBCoreTests */ = {
+		BFC6AFD72B8A666600E3D2E7 /* PEGBUseCasesTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF2FAB582B88E29C00F45FED /* PEGBCoreTests.swift */,
+				BFC6AFD82B8A666600E3D2E7 /* PEGBUseCasesTests.swift */,
 			);
-			path = PEGBCoreTests;
+			path = PEGBUseCasesTests;
 			sourceTree = "<group>";
 		};
-		BFC6AF392B8A35E900E3D2E7 /* Dynamic */ = {
+		BFC6AFEC2B8A666B00E3D2E7 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				BFC6AF3A2B8A35E900E3D2E7 /* Dynamic.swift */,
+				BFC6AFF02B8A66AD00E3D2E7 /* PredefineDataUseCase.swift */,
 			);
-			path = Dynamic;
+			path = UseCases;
 			sourceTree = "<group>";
 		};
-		BFC6AF3E2B8A38EB00E3D2E7 /* ViewModel */ = {
+		BFC6AFF22B8A66C400E3D2E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFC6AF3F2B8A390600E3D2E7 /* ViewModel.swift */,
+				BFC6AFF32B8A66C400E3D2E7 /* PEGBCore.framework */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		BFC6AF412B8A391E00E3D2E7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BFC6AF422B8A393000E3D2E7 /* View.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BFC6AFED2B8A669900E3D2E7 /* Startable */ = {
-			isa = PBXGroup;
-			children = (
-				BFC6AFEE2B8A669900E3D2E7 /* Startable.swift */,
-			);
-			path = Startable;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BF2FAB442B88E29B00F45FED /* Headers */ = {
+		BFC6AFC42B8A666600E3D2E7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2FAB5A2B88E29C00F45FED /* PEGBCore.h in Headers */,
+				BFC6AFDA2B8A666600E3D2E7 /* PEGBUseCases.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BF2FAB482B88E29B00F45FED /* PEGBCore */ = {
+		BFC6AFC82B8A666600E3D2E7 /* PEGBUseCases */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF2FAB5D2B88E29C00F45FED /* Build configuration list for PBXNativeTarget "PEGBCore" */;
+			buildConfigurationList = BFC6AFDD2B8A666600E3D2E7 /* Build configuration list for PBXNativeTarget "PEGBUseCases" */;
 			buildPhases = (
-				BF2FAB442B88E29B00F45FED /* Headers */,
-				BF2FAB452B88E29B00F45FED /* Sources */,
-				BF2FAB462B88E29B00F45FED /* Frameworks */,
-				BF2FAB472B88E29B00F45FED /* Resources */,
+				BFC6AFC42B8A666600E3D2E7 /* Headers */,
+				BFC6AFC52B8A666600E3D2E7 /* Sources */,
+				BFC6AFC62B8A666600E3D2E7 /* Frameworks */,
+				BFC6AFC72B8A666600E3D2E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PEGBCore;
-			productName = PEGBCore;
-			productReference = BF2FAB492B88E29B00F45FED /* PEGBCore.framework */;
+			name = PEGBUseCases;
+			productName = PEGBUseCases;
+			productReference = BFC6AFC92B8A666600E3D2E7 /* PEGBUseCases.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BF2FAB522B88E29C00F45FED /* PEGBCoreTests */ = {
+		BFC6AFD22B8A666600E3D2E7 /* PEGBUseCasesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF2FAB602B88E29C00F45FED /* Build configuration list for PBXNativeTarget "PEGBCoreTests" */;
+			buildConfigurationList = BFC6AFE02B8A666600E3D2E7 /* Build configuration list for PBXNativeTarget "PEGBUseCasesTests" */;
 			buildPhases = (
-				BF2FAB4F2B88E29C00F45FED /* Sources */,
-				BF2FAB502B88E29C00F45FED /* Frameworks */,
-				BF2FAB512B88E29C00F45FED /* Resources */,
+				BFC6AFCF2B8A666600E3D2E7 /* Sources */,
+				BFC6AFD02B8A666600E3D2E7 /* Frameworks */,
+				BFC6AFD12B8A666600E3D2E7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BF2FAB562B88E29C00F45FED /* PBXTargetDependency */,
+				BFC6AFD62B8A666600E3D2E7 /* PBXTargetDependency */,
 			);
-			name = PEGBCoreTests;
-			productName = PEGBCoreTests;
-			productReference = BF2FAB532B88E29C00F45FED /* PEGBCoreTests.xctest */;
+			name = PEGBUseCasesTests;
+			productName = PEGBUseCasesTests;
+			productReference = BFC6AFD32B8A666600E3D2E7 /* PEGBUseCasesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BF2FAB402B88E29B00F45FED /* Project object */ = {
+		BFC6AFC02B8A666600E3D2E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					BF2FAB482B88E29B00F45FED = {
+					BFC6AFC82B8A666600E3D2E7 = {
 						CreatedOnToolsVersion = 15.2;
 					};
-					BF2FAB522B88E29C00F45FED = {
+					BFC6AFD22B8A666600E3D2E7 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
-			buildConfigurationList = BF2FAB432B88E29B00F45FED /* Build configuration list for PBXProject "PEGBCore" */;
+			buildConfigurationList = BFC6AFC32B8A666600E3D2E7 /* Build configuration list for PBXProject "PEGBUseCases" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -205,26 +184,26 @@
 				en,
 				Base,
 			);
-			mainGroup = BF2FAB3F2B88E29B00F45FED;
-			productRefGroup = BF2FAB4A2B88E29B00F45FED /* Products */;
+			mainGroup = BFC6AFBF2B8A666600E3D2E7;
+			productRefGroup = BFC6AFCA2B8A666600E3D2E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF2FAB482B88E29B00F45FED /* PEGBCore */,
-				BF2FAB522B88E29C00F45FED /* PEGBCoreTests */,
+				BFC6AFC82B8A666600E3D2E7 /* PEGBUseCases */,
+				BFC6AFD22B8A666600E3D2E7 /* PEGBUseCasesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF2FAB472B88E29B00F45FED /* Resources */ = {
+		BFC6AFC72B8A666600E3D2E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF2FAB512B88E29C00F45FED /* Resources */ = {
+		BFC6AFD12B8A666600E3D2E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,38 +213,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BF2FAB452B88E29B00F45FED /* Sources */ = {
+		BFC6AFC52B8A666600E3D2E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC6AFEF2B8A669900E3D2E7 /* Startable.swift in Sources */,
-				BFC6AF432B8A393000E3D2E7 /* View.swift in Sources */,
-				BF2FAB4E2B88E29B00F45FED /* PEGBCore.docc in Sources */,
-				BFC6AF402B8A390600E3D2E7 /* ViewModel.swift in Sources */,
-				BFC6AF3B2B8A35E900E3D2E7 /* Dynamic.swift in Sources */,
+				BFC6AFF12B8A66AD00E3D2E7 /* PredefineDataUseCase.swift in Sources */,
+				BFC6AFCE2B8A666600E3D2E7 /* PEGBUseCases.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF2FAB4F2B88E29C00F45FED /* Sources */ = {
+		BFC6AFCF2B8A666600E3D2E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2FAB592B88E29C00F45FED /* PEGBCoreTests.swift in Sources */,
+				BFC6AFD92B8A666600E3D2E7 /* PEGBUseCasesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BF2FAB562B88E29C00F45FED /* PBXTargetDependency */ = {
+		BFC6AFD62B8A666600E3D2E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BF2FAB482B88E29B00F45FED /* PEGBCore */;
-			targetProxy = BF2FAB552B88E29C00F45FED /* PBXContainerItemProxy */;
+			target = BFC6AFC82B8A666600E3D2E7 /* PEGBUseCases */;
+			targetProxy = BFC6AFD52B8A666600E3D2E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		BF2FAB5B2B88E29C00F45FED /* Debug */ = {
+		BFC6AFDB2B8A666600E3D2E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -331,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		BF2FAB5C2B88E29C00F45FED /* Release */ = {
+		BFC6AFDC2B8A666600E3D2E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -390,7 +366,7 @@
 			};
 			name = Release;
 		};
-		BF2FAB5E2B88E29C00F45FED /* Debug */ = {
+		BFC6AFDE2B8A666600E3D2E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -411,7 +387,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBCore;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBUseCases;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -420,7 +396,7 @@
 			};
 			name = Debug;
 		};
-		BF2FAB5F2B88E29C00F45FED /* Release */ = {
+		BFC6AFDF2B8A666600E3D2E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -441,7 +417,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBCore;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBUseCases;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -450,7 +426,7 @@
 			};
 			name = Release;
 		};
-		BF2FAB612B88E29C00F45FED /* Debug */ = {
+		BFC6AFE12B8A666600E3D2E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -458,7 +434,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBCoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBUseCasesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -466,7 +442,7 @@
 			};
 			name = Debug;
 		};
-		BF2FAB622B88E29C00F45FED /* Release */ = {
+		BFC6AFE22B8A666600E3D2E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -474,7 +450,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBCoreTests;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.pegb.PEGBUseCasesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -485,34 +461,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF2FAB432B88E29B00F45FED /* Build configuration list for PBXProject "PEGBCore" */ = {
+		BFC6AFC32B8A666600E3D2E7 /* Build configuration list for PBXProject "PEGBUseCases" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF2FAB5B2B88E29C00F45FED /* Debug */,
-				BF2FAB5C2B88E29C00F45FED /* Release */,
+				BFC6AFDB2B8A666600E3D2E7 /* Debug */,
+				BFC6AFDC2B8A666600E3D2E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF2FAB5D2B88E29C00F45FED /* Build configuration list for PBXNativeTarget "PEGBCore" */ = {
+		BFC6AFDD2B8A666600E3D2E7 /* Build configuration list for PBXNativeTarget "PEGBUseCases" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF2FAB5E2B88E29C00F45FED /* Debug */,
-				BF2FAB5F2B88E29C00F45FED /* Release */,
+				BFC6AFDE2B8A666600E3D2E7 /* Debug */,
+				BFC6AFDF2B8A666600E3D2E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF2FAB602B88E29C00F45FED /* Build configuration list for PBXNativeTarget "PEGBCoreTests" */ = {
+		BFC6AFE02B8A666600E3D2E7 /* Build configuration list for PBXNativeTarget "PEGBUseCasesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF2FAB612B88E29C00F45FED /* Debug */,
-				BF2FAB622B88E29C00F45FED /* Release */,
+				BFC6AFE12B8A666600E3D2E7 /* Debug */,
+				BFC6AFE22B8A666600E3D2E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BF2FAB402B88E29B00F45FED /* Project object */;
+	rootObject = BFC6AFC02B8A666600E3D2E7 /* Project object */;
 }

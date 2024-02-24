@@ -33,6 +33,11 @@
 		BFC6AF472B8A447400E3D2E7 /* BaseContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF462B8A447400E3D2E7 /* BaseContentViewModel.swift */; };
 		BFC6AF492B8A49F500E3D2E7 /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF482B8A49F500E3D2E7 /* NewsDetailsViewModel.swift */; };
 		BFC6AF4C2B8A4A7600E3D2E7 /* NewsDetailNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF4B2B8A4A7600E3D2E7 /* NewsDetailNavigationViewModel.swift */; };
+		BFC6AF922B8A603400E3D2E7 /* PredefineDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF912B8A603400E3D2E7 /* PredefineDataUseCase.swift */; };
+		BFC6AF972B8A60D400E3D2E7 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AF772B8A4FD800E3D2E7 /* Storage.framework */; };
+		BFC6AF982B8A60D400E3D2E7 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AF772B8A4FD800E3D2E7 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFC6AFF72B8A66E600E3D2E7 /* PEGBUseCases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AFE92B8A666700E3D2E7 /* PEGBUseCases.framework */; };
+		BFC6AFF82B8A66E600E3D2E7 /* PEGBUseCases.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AFE92B8A666700E3D2E7 /* PEGBUseCases.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,34 @@
 			remoteGlobalIDString = BF2FAB852B88E37E00F45FED;
 			remoteInfo = PEGBUIKitTests;
 		};
+		BFC6AF762B8A4FD800E3D2E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFC6AF712B8A4FD700E3D2E7 /* Storage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFC6AF572B8A4FD600E3D2E7;
+			remoteInfo = Storage;
+		};
+		BFC6AF782B8A4FD800E3D2E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFC6AF712B8A4FD700E3D2E7 /* Storage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFC6AF612B8A4FD700E3D2E7;
+			remoteInfo = StorageTests;
+		};
+		BFC6AFE82B8A666700E3D2E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFC6AFE32B8A666600E3D2E7 /* PEGBUseCases.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFC6AFC92B8A666600E3D2E7;
+			remoteInfo = PEGBUseCases;
+		};
+		BFC6AFEA2B8A666700E3D2E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFC6AFE32B8A666600E3D2E7 /* PEGBUseCases.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BFC6AFD32B8A666600E3D2E7;
+			remoteInfo = PEGBUseCasesTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,8 +106,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BFC6AFF82B8A66E600E3D2E7 /* PEGBUseCases.framework in Embed Frameworks */,
 				BF2FABE82B88E88B00F45FED /* PEGBUIKit.framework in Embed Frameworks */,
 				BFC6AF382B8A357F00E3D2E7 /* PEGBCore.framework in Embed Frameworks */,
+				BFC6AF982B8A60D400E3D2E7 /* Storage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +143,9 @@
 		BFC6AF462B8A447400E3D2E7 /* BaseContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContentViewModel.swift; sourceTree = "<group>"; };
 		BFC6AF482B8A49F500E3D2E7 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
 		BFC6AF4B2B8A4A7600E3D2E7 /* NewsDetailNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailNavigationViewModel.swift; sourceTree = "<group>"; };
+		BFC6AF712B8A4FD700E3D2E7 /* Storage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Storage.xcodeproj; path = Storage/Storage.xcodeproj; sourceTree = "<group>"; };
+		BFC6AF912B8A603400E3D2E7 /* PredefineDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefineDataUseCase.swift; sourceTree = "<group>"; };
+		BFC6AFE32B8A666600E3D2E7 /* PEGBUseCases.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PEGBUseCases.xcodeproj; path = PEGBUseCases/PEGBUseCases.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +153,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC6AFF72B8A66E600E3D2E7 /* PEGBUseCases.framework in Frameworks */,
 				BF2FABE72B88E88B00F45FED /* PEGBUIKit.framework in Frameworks */,
 				BFC6AF372B8A357F00E3D2E7 /* PEGBCore.framework in Frameworks */,
+				BFC6AF972B8A60D400E3D2E7 /* Storage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +166,8 @@
 		BF2FAB9E2B88E3A600F45FED = {
 			isa = PBXGroup;
 			children = (
+				BFC6AFE32B8A666600E3D2E7 /* PEGBUseCases.xcodeproj */,
+				BFC6AF712B8A4FD700E3D2E7 /* Storage.xcodeproj */,
 				BF2FABD02B88E41100F45FED /* PEGBUIKit.xcodeproj */,
 				BF2FABC72B88E40C00F45FED /* PEGBCore.xcodeproj */,
 				BF2FABA92B88E3A600F45FED /* POC */,
@@ -145,6 +187,7 @@
 		BF2FABA92B88E3A600F45FED /* POC */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AF902B8A5FFA00E3D2E7 /* UseCases */,
 				BFC6AF172B89C98600E3D2E7 /* Extensions */,
 				BF2FABBE2B88E3FF00F45FED /* Components */,
 				BF2FABAA2B88E3A600F45FED /* AppDelegate.swift */,
@@ -317,6 +360,32 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		BFC6AF722B8A4FD700E3D2E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF772B8A4FD800E3D2E7 /* Storage.framework */,
+				BFC6AF792B8A4FD800E3D2E7 /* StorageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFC6AF902B8A5FFA00E3D2E7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AF912B8A603400E3D2E7 /* PredefineDataUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		BFC6AFE42B8A666600E3D2E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6AFE92B8A666700E3D2E7 /* PEGBUseCases.framework */,
+				BFC6AFEB2B8A666700E3D2E7 /* PEGBUseCasesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,6 +442,14 @@
 					ProductGroup = BF2FABD12B88E41100F45FED /* Products */;
 					ProjectRef = BF2FABD02B88E41100F45FED /* PEGBUIKit.xcodeproj */;
 				},
+				{
+					ProductGroup = BFC6AFE42B8A666600E3D2E7 /* Products */;
+					ProjectRef = BFC6AFE32B8A666600E3D2E7 /* PEGBUseCases.xcodeproj */;
+				},
+				{
+					ProductGroup = BFC6AF722B8A4FD700E3D2E7 /* Products */;
+					ProjectRef = BFC6AF712B8A4FD700E3D2E7 /* Storage.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -408,6 +485,34 @@
 			fileType = wrapper.cfbundle;
 			path = PEGBUIKitTests.xctest;
 			remoteRef = BF2FABD72B88E41100F45FED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BFC6AF772B8A4FD800E3D2E7 /* Storage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Storage.framework;
+			remoteRef = BFC6AF762B8A4FD800E3D2E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BFC6AF792B8A4FD800E3D2E7 /* StorageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = StorageTests.xctest;
+			remoteRef = BFC6AF782B8A4FD800E3D2E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BFC6AFE92B8A666700E3D2E7 /* PEGBUseCases.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PEGBUseCases.framework;
+			remoteRef = BFC6AFE82B8A666700E3D2E7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BFC6AFEB2B8A666700E3D2E7 /* PEGBUseCasesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PEGBUseCasesTests.xctest;
+			remoteRef = BFC6AFEA2B8A666700E3D2E7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -448,6 +553,7 @@
 				BFC6AF262B89E6C500E3D2E7 /* SavedNewsViewController.swift in Sources */,
 				BF2FABAB2B88E3A600F45FED /* AppDelegate.swift in Sources */,
 				BFC6AF4C2B8A4A7600E3D2E7 /* NewsDetailNavigationViewModel.swift in Sources */,
+				BFC6AF922B8A603400E3D2E7 /* PredefineDataUseCase.swift in Sources */,
 				BF2FABC52B88E3FF00F45FED /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
