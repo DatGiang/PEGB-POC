@@ -27,7 +27,7 @@ class MainTabController: UITabBarController {
             case .topHeadlines:
                 return "Top Headlines"
             case .savedNews:
-                return "Save News"
+                return "Saved News"
             }
         }
         
@@ -51,6 +51,12 @@ class MainTabController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViewControllers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationController?.isNavigationBarHidden = true
+        tabBarController?.navigationController?.navigationBar.isHidden = true
     }
 }
 
