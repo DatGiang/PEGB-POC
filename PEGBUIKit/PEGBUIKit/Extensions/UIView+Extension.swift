@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func roundCorner(radius: CGFloat = 8) {
+    public func roundCorner(radius: CGFloat = 8) {
         layer.cornerRadius = radius
         layer.masksToBounds = true
     }

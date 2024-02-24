@@ -24,6 +24,14 @@ class PEGBUINavigationBar: HorizontalViews {
         return view
     }()
 
+    private lazy var logoutButton: UIButton = {
+        let view = UIButton(type: .system)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setImage(UIImage(named: "rectangle.portrait.and.arrow.forward")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        view.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
+        return view
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -33,11 +41,14 @@ class PEGBUINavigationBar: HorizontalViews {
         super.init(coder: coder)
         setupViews()
     }
+    
+    @objc private func didTapLogout() {}
 }
 
 extension PEGBUINavigationBar {
     private func setupViews() {
         setupAvatarView()
+        setupLogoutButton()
     }
 
     private func setupAvatarView() {
@@ -53,7 +64,24 @@ extension PEGBUINavigationBar {
             avatarImageView.heightAnchor.constraint(equalToConstant: UIConstants.Sizes.avatarSize.height),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
         ])
-        
+
         addSubLeadingView(avatarView)
+    }
+    
+    private func setupLogoutButton() {
+        let logoutView = UIView()
+        logoutView.translatesAutoresizingMaskIntoConstraints = false
+
+        logoutView.addSubview(logoutButton)
+        NSLayoutConstraint.activate([
+            logoutButton.topAnchor.constraint(equalTo: logoutView.topAnchor, constant: UIConstants.Padding.small),
+            logoutButton.leadingAnchor.constraint(equalTo: logoutView.leadingAnchor, constant: UIConstants.Padding.small),
+            logoutButton.centerXAnchor.constraint(equalTo: logoutView.centerXAnchor),
+            logoutButton.centerYAnchor.constraint(equalTo: logoutView.centerYAnchor),
+            logoutButton.heightAnchor.constraint(equalToConstant: UIConstants.Sizes.iconSize.height),
+            logoutButton.heightAnchor.constraint(equalTo: logoutButton.widthAnchor),
+        ])
+
+        addSubTrailingView(logoutView)
     }
 }

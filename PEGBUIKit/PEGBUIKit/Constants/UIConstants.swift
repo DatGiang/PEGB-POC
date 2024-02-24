@@ -13,7 +13,9 @@ public enum UIConstants {
         public static let buttonHeight: CGFloat = 48
         public static let navigationBarHeight: CGFloat = 48
         public static let logoSize: CGSize = .init(width: 128, height: 128)
+        public static let thumbnailSize: CGSize = .init(width: 128, height: 128)
         public static let avatarSize: CGSize = .init(width: 32, height: 32)
+        public static let iconSize: CGSize = .init(width: 32, height: 32)
     }
 
     public enum Padding {

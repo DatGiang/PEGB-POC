@@ -20,6 +20,7 @@
 		BF2FABEF2B88EA0300F45FED /* PEGBUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */; };
 		BFC6AF052B89A20300E3D2E7 /* HorizontalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */; };
 		BFC6AF1B2B89CEAB00E3D2E7 /* PEGBAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */; };
+		BFC6AF202B89DF6000E3D2E7 /* PEGBUISearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIButton.swift; sourceTree = "<group>"; };
 		BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViews.swift; sourceTree = "<group>"; };
 		BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEGBAvatarView.swift; sourceTree = "<group>"; };
+		BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUISearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		BF2FABD92B88E42C00F45FED /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */,
 				BF2FABDA2B88E43E00F45FED /* PEGBUITextField.swift */,
 			);
 			path = UITextField;
@@ -287,6 +290,7 @@
 				BFC6AF1B2B89CEAB00E3D2E7 /* PEGBAvatarView.swift in Sources */,
 				BF2FABEC2B88E9B600F45FED /* PEGBUICircleImageView.swift in Sources */,
 				BF2FABE52B88E7C500F45FED /* UIConstants.swift in Sources */,
+				BFC6AF202B89DF6000E3D2E7 /* PEGBUISearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

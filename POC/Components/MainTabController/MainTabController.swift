@@ -16,11 +16,9 @@ class MainTabController: UITabBarController {
         var viewController: UIViewController {
             switch self {
             case .topHeadlines:
-                let vc = TopHeadlinesViewController()
-                return vc
+                return TopHeadlinesViewController()
             case .savedNews:
-                let vc = TopHeadlinesViewController()
-                return vc
+                return SavedNewsViewController()
             }
         }
         
