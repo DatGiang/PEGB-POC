@@ -8,8 +8,9 @@
 import Foundation
 import PEGBUIKit
 import UIKit
+import PEGBCore
 
-class BaseContentViewController: BaseViewController {
+class BaseContentViewController: BaseViewController, View {
     private let kNewsItemTableViewCell = "NewsItemTableViewCell"
     
     private lazy var navigationBarView: PEGBUINavigationBar = {
@@ -36,7 +37,18 @@ class BaseContentViewController: BaseViewController {
         view.contentInsetAdjustmentBehavior = .never
         return view
     }()
-
+    
+    var viewModel: BaseContentViewModel?
+    
+    init(viewModel: BaseContentViewModel?) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         setupViews()
@@ -51,6 +63,7 @@ extension BaseContentViewController {
     }
 
     private func setupNavigationBar() {
+        navigationBarView.viewModel = viewModel?.navigationViewModel
         view.addSubview(navigationBarView)
         NSLayoutConstraint.activate([
             navigationBarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -95,5 +108,10 @@ extension BaseContentViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         144
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel?.navigateToNewsDetails()
     }
 }

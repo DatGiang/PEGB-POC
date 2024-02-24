@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import PEGBCore
 import PEGBUIKit
 import UIKit
 
-class PEGBUINavigationBar: HorizontalViews {
+class PEGBUINavigationBar: HorizontalViews, View {
     var title: String {
         get { return titleLabel.text ?? "" }
         set {
@@ -31,6 +32,13 @@ class PEGBUINavigationBar: HorizontalViews {
         view.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
         return view
     }()
+    
+    var viewModel: PEGBUINavigationBarViewModel?
+    
+    init(viewModel: PEGBUINavigationBarViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,8 +49,8 @@ class PEGBUINavigationBar: HorizontalViews {
         super.init(coder: coder)
         setupViews()
     }
-    
-    @objc private func didTapLogout() {}
+
+    @objc private func didTapLogout() { viewModel?.didTapLogout() }
 }
 
 extension PEGBUINavigationBar {
@@ -67,7 +75,7 @@ extension PEGBUINavigationBar {
 
         addSubLeadingView(avatarView)
     }
-    
+
     private func setupLogoutButton() {
         let logoutView = UIView()
         logoutView.translatesAutoresizingMaskIntoConstraints = false

@@ -6,7 +6,14 @@
 //
 
 import Foundation
+import PEGBCore
 
-class LoginViewModel: NSObject {
+class LoginViewModel: NSObject, ViewModel {
+    let mainViewControllerNavigatable = Dynamic<Bool>(false)
+    var mainTabViewModel: MainTabViewModel!
     
+    func login() {
+        mainTabViewModel = MainTabViewModel()
+        mainViewControllerNavigatable.value = true
+    }
 }

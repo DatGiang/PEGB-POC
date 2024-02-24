@@ -8,8 +8,9 @@
 import Foundation
 import PEGBUIKit
 import UIKit
+import PEGBCore
 
-class NewsDetailsViewController: BaseViewController {
+class NewsDetailsViewController: BaseViewController, View {
     private lazy var navigationBarView: NewsDetailsNavigation = {
         let view = NewsDetailsNavigation()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +36,18 @@ class NewsDetailsViewController: BaseViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
+    var viewModel: NewsDetailsViewModel?
+    
+    init(viewModel: NewsDetailsViewModel?) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override public func loadView() {
         super.loadView()
         setupViews()
@@ -44,6 +56,7 @@ class NewsDetailsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        webView.url = "https://www.washingtonpost.com/technology/2024/02/22/moon-landing-intuitive-machines-odysseus-nasa-live/"
+        bindViewModel()
     }
 }
 
@@ -65,6 +78,7 @@ extension NewsDetailsViewController {
     }
     
     private func setupNavigationBarView() {
+        navigationBarView.viewModel = viewModel?.navigationViewModel
         view.addSubview(navigationBarView)
         NSLayoutConstraint.activate([
             navigationBarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -79,5 +93,13 @@ extension NewsDetailsViewController {
     
     private func setupOfflineView() {
         stackView.addArrangedSubview(offlineView)
+    }
+}
+
+extension NewsDetailsViewController {
+    private func bindViewModel() {
+        viewModel?.isCloseNewsDetails.bind { [weak self] in
+            if $0 { self?.navigationController?.popViewController(animated: true) }
+        }
     }
 }

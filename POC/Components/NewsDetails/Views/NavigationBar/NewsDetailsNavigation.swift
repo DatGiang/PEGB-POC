@@ -8,8 +8,9 @@
 import Foundation
 import PEGBUIKit
 import UIKit
+import PEGBCore
 
-class NewsDetailsNavigation: HorizontalViews {
+class NewsDetailsNavigation: HorizontalViews, View {
     private lazy var bookmarkButton: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +26,13 @@ class NewsDetailsNavigation: HorizontalViews {
         view.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
         return view
     }()
+    
+    var viewModel: NewsDetailNavigationViewModel?
+    
+    init(viewModel: NewsDetailNavigationViewModel?) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,11 +44,9 @@ class NewsDetailsNavigation: HorizontalViews {
         setupViews()
     }
 
-    @objc private func didTapBookmark() {
-    }
+    @objc private func didTapBookmark() { viewModel?.didTapBookmark() }
 
-    @objc private func didTapClose() {
-    }
+    @objc private func didTapClose() { viewModel?.didTapClose() }
 }
 
 extension NewsDetailsNavigation {
