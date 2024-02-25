@@ -10,7 +10,7 @@ import PEGBUseCases
 import UIKit
 
 class TopHeadlinesViewModel: BaseContentViewModel {
-    override func bindShowNews(from allNews: [NewsResponse]) {
-        shownNews.value = allNews
+    override func bindShowNews() {
+        shownNews.value = allNews.value
     }
 }

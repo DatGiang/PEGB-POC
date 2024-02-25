@@ -8,11 +8,12 @@
 import Foundation
 import PEGBCore
 import PEGBUseCases
+import UIKit
 
 class MainTabViewModel: NSObject, ViewModel {
     let isLogout = Dynamic<Bool>(false)
     var newsDetailsNavigatable = Dynamic<Bool>(false)
-    
+
     var topHeadlinesViewModel: BaseContentViewModel!
     var savedNewsViewModel: BaseContentViewModel!
     var newsDetailsViewModel: NewsDetailsViewModel!
@@ -21,8 +22,14 @@ class MainTabViewModel: NSObject, ViewModel {
         super.init()
         topHeadlinesViewModel = TopHeadlinesViewModel(delegate: self)
         savedNewsViewModel = SavedNewsViewModel(delegate: self)
+
+        NotificationCenter.default.addObserver(forName: .NewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
+            guard let self else { return }
+            self.topHeadlinesViewModel.reload()
+            self.savedNewsViewModel.reload()
+        }
     }
-    
+
     func getTopHeadlinesNews() {
         NewsRequesterUseCase().getTopHeadlines { [weak self] in
             guard let self else { return }

@@ -114,5 +114,8 @@ extension NewsDetailsViewController {
                 self?.offlineView.viewModel = self?.viewModel?.offlineViewModel
             }
         }
+        viewModel?.isSaved.bindAndFire { [weak self] in
+            self?.navigationBarView.bookmarkButton.setImage(UIImage(named: $0 ? "bookmark.fill" : "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
     }
 }

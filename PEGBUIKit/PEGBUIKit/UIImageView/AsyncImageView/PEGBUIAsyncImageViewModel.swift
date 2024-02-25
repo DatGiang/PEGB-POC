@@ -23,7 +23,7 @@ public class PEGBUIAsyncImageViewModel: NSObject, ViewModel {
             self.image.value = image
             return
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let data = data, error == nil else { return }
             printLog(response?.suggestedFilename ?? url.lastPathComponent)
             printLog("Download Finished")
@@ -31,6 +31,7 @@ public class PEGBUIAsyncImageViewModel: NSObject, ViewModel {
                 try data.write(to: documentsDirectoryURL.appendingPathComponent(url.lastPathComponent))
             } catch {
                 printLog(error.localizedDescription)
+                self?.image.value = nil
             }
             // always update the UI from the main thread
             DispatchQueue.main.async { [weak self] in

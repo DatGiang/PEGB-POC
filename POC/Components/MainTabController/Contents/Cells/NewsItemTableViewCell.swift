@@ -54,7 +54,6 @@ class NewsItemTableViewCell: UITableViewCell, View {
     private lazy var bookmarkButton: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(UIImage(named: "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
         view.addTarget(self, action: #selector(didTapBookmark), for: .touchUpInside)
         return view
     }()
@@ -154,10 +153,11 @@ extension NewsItemTableViewCell {
 extension NewsItemTableViewCell {
     private func bindViewModel() {
         viewModel?.news.bindAndFire { [weak self] in
-            self?.authorLabel.text = $0.author ?? ""
-            self?.titleLabel.text = $0.title ?? ""
-            self?.timeStampLabel.text = $0.publishedAt ?? ""
-            if let urlToImage = $0.urlToImage,
+            self?.authorLabel.text = $0.0.author ?? ""
+            self?.titleLabel.text = $0.0.title ?? ""
+            self?.timeStampLabel.text = $0.0.publishedAt ?? ""
+            self?.bookmarkButton.setImage(UIImage(named: $0.1 ? "bookmark.fill" : "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            if let urlToImage = $0.0.urlToImage,
                let urlImage = URL(string: urlToImage) {
                 self?.thumbnailImageView.url = urlImage
             }

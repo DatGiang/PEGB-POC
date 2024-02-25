@@ -12,8 +12,6 @@ import PEGBCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
-    var newsDataSynchronizerListener: (() -> Void)?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         runStartable()
@@ -26,7 +24,7 @@ extension AppDelegate {
     private func runStartable() {
         var newsDataSynchronizer: NewsDataSynchronizationUseCase = .init()
         newsDataSynchronizer.dataChangedListener = { [weak self] in
-            self?.newsDataSynchronizerListener?()
+            NotificationCenter.default.post(name: .NewsDataSynchronizerChanged, object: nil)
         }
         let startables: [Startable] = [
             PredefineDataUseCase(),

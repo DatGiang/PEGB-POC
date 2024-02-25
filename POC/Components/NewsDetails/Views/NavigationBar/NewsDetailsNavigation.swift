@@ -11,10 +11,9 @@ import UIKit
 import PEGBCore
 
 class NewsDetailsNavigation: HorizontalViews, View {
-    private lazy var bookmarkButton: UIButton = {
+    lazy var bookmarkButton: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(UIImage(named: "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
         view.addTarget(self, action: #selector(didTapBookmark), for: .touchUpInside)
         return view
     }()

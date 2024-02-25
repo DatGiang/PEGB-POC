@@ -10,20 +10,14 @@ import PEGBCore
 import PEGBUseCases
 
 class NewsItemTableViewCellViewModel: NSObject, ViewModel {
-    let news: Dynamic<NewsResponse>
+    let news: Dynamic<NewsAndSave>
     
-    init(news: NewsResponse) {
+    init(news: NewsAndSave) {
         self.news = .init(news)
     }
     
     func onTapBookmark() {
         let newsDataSynchronize: NewsDataSynchronizationUseCase = .init()
-        newsDataSynchronize.saveOrDelete(news: news.value) {
-            switch $0 {
-            case let .failure(error): break
-            case .success: break
-            }
-        }
-        
+        newsDataSynchronize.saveOrDelete(news: news.value.0) { _ in }
     }
 }
