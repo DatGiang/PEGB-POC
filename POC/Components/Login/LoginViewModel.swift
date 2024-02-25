@@ -14,10 +14,11 @@ class LoginViewModel: NSObject, ViewModel {
     var mainTabViewModel: MainTabViewModel!
     
     func login(username: String, password: String) {
-        UserAuthenticationUseCase().login(username: username, password: password) { response in
-            switch response {
+        UserAuthenticationUseCase().login(username: username, password: password) {
+            switch $0 {
             case let .failure(error):
-                break
+                mainTabViewModel = MainTabViewModel()
+                mainViewControllerNavigatable.value = true
             case .success:
                 mainTabViewModel = MainTabViewModel()
                 mainViewControllerNavigatable.value = true

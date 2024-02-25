@@ -8,11 +8,11 @@
 import Foundation
 import Storage
 
-public typealias UserAuthenticationResponse = Result<Void, Error>
+public typealias UserAuthenticationResponse = (Result<Void, Error>) -> Void
 
 public struct UserAuthenticationUseCase {
     public init() {}
-    public func login(username: String, password: String, completion: (UserAuthenticationResponse) -> Void) {
+    public func login(username: String, password: String, completion: UserAuthenticationResponse) {
         UserRepositoryHelper().getUser(by: username, and: password) {
             switch $0 {
             case .success: completion(.success(()))

@@ -17,9 +17,9 @@ class MainTabController: UITabBarController, View {
         func getViewController(parent: MainTabController) -> UIViewController {
             switch self {
             case .topHeadlines:
-                return TopHeadlinesViewController(viewModel: parent.viewModel?.baseContentViewModel)
+                return BaseContentViewController(viewModel: parent.viewModel?.topHeadlinesViewModel)
             case .savedNews:
-                return SavedNewsViewController(viewModel: parent.viewModel?.baseContentViewModel)
+                return BaseContentViewController(viewModel: parent.viewModel?.savedNewsViewModel)
             }
         }
 
@@ -58,6 +58,7 @@ class MainTabController: UITabBarController, View {
         view.backgroundColor = .white
         setupViewControllers()
         bindViewModel()
+        getData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -89,5 +90,9 @@ extension MainTabController {
                 self.navigationController?.pushViewController(newsDetailsViewController, animated: true)
             }
         }
+    }
+    
+    private func getData() {
+        viewModel?.getTopHeadlinesNews()
     }
 }

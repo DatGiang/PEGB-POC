@@ -7,16 +7,32 @@
 
 import Foundation
 import PEGBCore
+import PEGBUseCases
 
 class MainTabViewModel: NSObject, ViewModel {
     let isLogout = Dynamic<Bool>(false)
     var newsDetailsNavigatable = Dynamic<Bool>(false)
-    var baseContentViewModel: BaseContentViewModel!
+    
+    var topHeadlinesViewModel: BaseContentViewModel!
+    var savedNewsViewModel: BaseContentViewModel!
     var newsDetailsViewModel: NewsDetailsViewModel!
 
     override init() {
         super.init()
-        baseContentViewModel = .init(delegate: self)
+        topHeadlinesViewModel = TopHeadlinesViewModel(delegate: self)
+        savedNewsViewModel = SavedNewsViewModel(delegate: self)
+    }
+    
+    func getTopHeadlinesNews() {
+        NewsRequesterUseCase().getTopHeadlines { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .failure: break
+            case let .success(news):
+                self.topHeadlinesViewModel.setAllNews(news: news)
+                self.savedNewsViewModel.setAllNews(news: news)
+            }
+        }
     }
 }
 

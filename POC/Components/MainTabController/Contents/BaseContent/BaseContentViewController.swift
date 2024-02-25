@@ -53,6 +53,11 @@ class BaseContentViewController: BaseViewController, View {
         super.loadView()
         setupViews()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindViewModels()
+    }
 }
 
 extension BaseContentViewController {
@@ -96,18 +101,29 @@ extension BaseContentViewController {
     }
 }
 
+extension BaseContentViewController {
+    func bindViewModels() {
+        viewModel?.shownNews.bind { [weak self] _ in
+            self?.contentTableView.reloadData()
+        }
+    }
+}
+
 extension BaseContentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        viewModel?.contentTableViewNumberOfRowsInSection(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kNewsItemTableViewCell, for: indexPath)
+        if let newsCell = cell as? NewsItemTableViewCell {
+            newsCell.viewModel = viewModel?.contentTableViewCellViewModel(at: indexPath)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        144
+        viewModel?.contentTableViewHeightForRows(at: indexPath) ?? 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
