@@ -17,8 +17,7 @@ class LoginViewModel: NSObject, ViewModel {
         UserAuthenticationUseCase().login(username: username, password: password) {
             switch $0 {
             case let .failure(error):
-                mainTabViewModel = MainTabViewModel()
-                mainViewControllerNavigatable.value = true
+                break
             case .success:
                 mainTabViewModel = MainTabViewModel()
                 mainViewControllerNavigatable.value = true

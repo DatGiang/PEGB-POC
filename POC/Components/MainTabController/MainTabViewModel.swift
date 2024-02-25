@@ -29,8 +29,8 @@ class MainTabViewModel: NSObject, ViewModel {
             switch $0 {
             case .failure: break
             case let .success(news):
-                self.topHeadlinesViewModel.setAllNews(news: news)
-                self.savedNewsViewModel.setAllNews(news: news)
+                self.topHeadlinesViewModel.fetchAllNews(news: news)
+                self.savedNewsViewModel.fetchAllNews(news: news)
             }
         }
     }

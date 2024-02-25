@@ -10,4 +10,6 @@ import Foundation
 
 protocol CoreDataManager {
     var backgroundManagedObjectContext: NSManagedObjectContext { get }
+    var publishableManagedObjectContext: NSManagedObjectContext { get }
+    var publishableContextChangedListener: (() -> Void)?  { get set }
 }

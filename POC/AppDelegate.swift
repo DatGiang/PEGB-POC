@@ -12,6 +12,8 @@ import PEGBCore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    var newsDataSynchronizerListener: (() -> Void)?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         runStartable()
@@ -22,8 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func runStartable() {
+        var newsDataSynchronizer: NewsDataSynchronizationUseCase = .init()
+        newsDataSynchronizer.dataChangedListener = { [weak self] in
+            self?.newsDataSynchronizerListener?()
+        }
         let startables: [Startable] = [
-            PredefineDataUseCase()
+            PredefineDataUseCase(),
+            newsDataSynchronizer
         ]
         startables.forEach { $0.start() }
     }

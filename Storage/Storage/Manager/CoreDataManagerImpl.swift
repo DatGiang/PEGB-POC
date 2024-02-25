@@ -42,6 +42,14 @@ public class CoreDataManagerImpl: CoreDataManager {
         managedObjectContext.parent = privateManagedObjectContext
         return managedObjectContext
     }()
+    
+    public lazy var publishableManagedObjectContext: NSManagedObjectContext = {
+        let managedObjectContext = NSManagedObjectContext(
+            concurrencyType: .privateQueueConcurrencyType
+        )
+        managedObjectContext.parent = privateManagedObjectContext
+        return managedObjectContext
+    }()
 
     /// private NSManagedObjectContext with access to the persistent store coordinator
     private lazy var privateManagedObjectContext: NSManagedObjectContext = {
@@ -50,6 +58,8 @@ public class CoreDataManagerImpl: CoreDataManager {
         managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return managedObjectContext
     }()
+    
+    public var publishableContextChangedListener: (() -> Void)?
 
     public static let shared = CoreDataManagerImpl(modelName: CoreDataManagerImpl.modelName)
 
@@ -61,6 +71,7 @@ public class CoreDataManagerImpl: CoreDataManager {
         var notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(managedObjectContextDidSave(notification:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: backgroundManagedObjectContext)
         notificationCenter.addObserver(self, selector: #selector(privateManagedObjectContextDidSave(notification:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: privateManagedObjectContext)
+        notificationCenter.addObserver(self, selector: #selector(self.publishableManagedObjectContextDidChange(notification:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: publishableManagedObjectContext)
     }
 
     // MARK: Notification Handling
@@ -72,6 +83,14 @@ public class CoreDataManagerImpl: CoreDataManager {
     }
 
     @objc func privateManagedObjectContextDidSave(notification: Notification) {
+    }
+    
+    @objc func publishableManagedObjectContextDidChange(notification: Notification) {
+        // Merged changes and saved
+        self.privateManagedObjectContext.mergeChanges(fromContextDidSave: notification)
+        self.saveChanges()
+        
+        publishableContextChangedListener?()
     }
 
     // MARK: - Functions

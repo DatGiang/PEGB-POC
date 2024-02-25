@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-enum RepositoryError: Error {
+public enum RepositoryError: Error {
     case objectNotFound
 }
 
@@ -58,6 +58,19 @@ public class CoreDataRepository<Entity: NSManagedObject> {
             do {
                 try context.save()
                 completion(.success(entity))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    /// Deletes the NSManagedObject Entity in the database.
+    public func delete(_ entity: Entity, completion: (Result<Void, Error>) -> Void) {
+        context.performAndWait {
+            do {
+                context.delete(entity)
+                try context.save()
+                completion(.success(()))
             } catch {
                 completion(.failure(error))
             }

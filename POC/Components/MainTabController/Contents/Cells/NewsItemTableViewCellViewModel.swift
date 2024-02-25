@@ -15,4 +15,15 @@ class NewsItemTableViewCellViewModel: NSObject, ViewModel {
     init(news: NewsResponse) {
         self.news = .init(news)
     }
+    
+    func onTapBookmark() {
+        let newsDataSynchronize: NewsDataSynchronizationUseCase = .init()
+        newsDataSynchronize.saveOrDelete(news: news.value) {
+            switch $0 {
+            case let .failure(error): break
+            case .success: break
+            }
+        }
+        
+    }
 }

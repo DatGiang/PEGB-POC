@@ -21,6 +21,7 @@ class LoginViewController: BaseViewController, View {
         let view = PEGBUITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Username"
+        view.text = "usera"
         return view
     }()
 
@@ -29,6 +30,7 @@ class LoginViewController: BaseViewController, View {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Password"
         view.isSecureTextEntry = true
+        view.text = "passworda"
         return view
     }()
 

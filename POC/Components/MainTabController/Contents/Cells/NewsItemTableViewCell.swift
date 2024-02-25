@@ -55,6 +55,7 @@ class NewsItemTableViewCell: UITableViewCell, View {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setImage(UIImage(named: "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        view.addTarget(self, action: #selector(didTapBookmark), for: .touchUpInside)
         return view
     }()
 
@@ -66,16 +67,22 @@ class NewsItemTableViewCell: UITableViewCell, View {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initViews()
+        setupViews()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        initViews()
+        setupViews()
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc private func didTapBookmark() {
+        viewModel?.onTapBookmark()
+    }
+}
 
-    private func initViews() {
+extension NewsItemTableViewCell {
+    private func setupViews() {
         setupBackgroundView()
         setupThumbnailImageView()
         setupTitleLabel()

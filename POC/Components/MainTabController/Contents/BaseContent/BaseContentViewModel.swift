@@ -17,7 +17,7 @@ protocol BaseContentViewModelDelegate: AnyObject {
 class BaseContentViewModel: NSObject, ViewModel {
     var navigationViewModel: PEGBUINavigationBarViewModel!
     private weak var delegate: BaseContentViewModelDelegate?
-    private var allNews: Dynamic<[NewsResponse]> = .init([])
+    var allNews: Dynamic<[NewsResponse]> = .init([])
     var shownNews: Dynamic<[NewsResponse]> = .init([])
     
     init(delegate: BaseContentViewModelDelegate?) {
@@ -31,7 +31,7 @@ class BaseContentViewModel: NSObject, ViewModel {
         delegate?.baseContentViewModelDidTapNews(news: news)
     }
     
-    func setAllNews(news: [NewsResponse]) {
+    func fetchAllNews(news: [NewsResponse]) {
         self.allNews.value = news
         bindShowNews(from: news)
     }
