@@ -65,6 +65,8 @@ class MainTabController: UITabBarController, View {
         super.viewWillAppear(animated)
         tabBarController?.navigationController?.isNavigationBarHidden = true
         tabBarController?.navigationController?.navigationBar.isHidden = true
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
