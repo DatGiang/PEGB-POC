@@ -18,6 +18,9 @@
 		BF2FABE52B88E7C500F45FED /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABE42B88E7C500F45FED /* UIConstants.swift */; };
 		BF2FABEC2B88E9B600F45FED /* PEGBUICircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABEB2B88E9B600F45FED /* PEGBUICircleImageView.swift */; };
 		BF2FABEF2B88EA0300F45FED /* PEGBUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */; };
+		BF39632E2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39632D2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift */; };
+		BF3963312B8AFF7500253706 /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3963302B8AFF7500253706 /* PEGBCore.framework */; };
+		BF3963362B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3963352B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift */; };
 		BFC6AF052B89A20300E3D2E7 /* HorizontalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */; };
 		BFC6AF1B2B89CEAB00E3D2E7 /* PEGBAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */; };
 		BFC6AF202B89DF6000E3D2E7 /* PEGBUISearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */; };
@@ -48,6 +51,9 @@
 		BF2FABE42B88E7C500F45FED /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		BF2FABEB2B88E9B600F45FED /* PEGBUICircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUICircleImageView.swift; sourceTree = "<group>"; };
 		BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIButton.swift; sourceTree = "<group>"; };
+		BF39632D2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIAsyncImageView.swift; sourceTree = "<group>"; };
+		BF3963302B8AFF7500253706 /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3963352B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIAsyncImageViewModel.swift; sourceTree = "<group>"; };
 		BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViews.swift; sourceTree = "<group>"; };
 		BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEGBAvatarView.swift; sourceTree = "<group>"; };
 		BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUISearchTextField.swift; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3963312B8AFF7500253706 /* PEGBCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +87,7 @@
 				BF2FAB7D2B88E37E00F45FED /* PEGBUIKit */,
 				BF2FAB892B88E37E00F45FED /* PEGBUIKitTests */,
 				BF2FAB7C2B88E37E00F45FED /* Products */,
+				BF39632F2B8AFF7500253706 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				BF2FABEB2B88E9B600F45FED /* PEGBUICircleImageView.swift */,
+				BF3963342B8AFF9C00253706 /* AsyncImageView */,
 			);
 			path = UIImageView;
 			sourceTree = "<group>";
@@ -159,6 +168,23 @@
 				BF2FABEE2B88EA0300F45FED /* PEGBUIButton.swift */,
 			);
 			path = UIButton;
+			sourceTree = "<group>";
+		};
+		BF39632F2B8AFF7500253706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF3963302B8AFF7500253706 /* PEGBCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF3963342B8AFF9C00253706 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				BF39632D2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift */,
+				BF3963352B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 		BFC6AF032B89A1F200E3D2E7 /* HorizontalViews */ = {
@@ -303,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2FABDE2B88E54E00F45FED /* UIView+Extension.swift in Sources */,
+				BF39632E2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift in Sources */,
 				BFC6AF362B8A211700E3D2E7 /* PEGBUIScrollView.swift in Sources */,
 				BF2FAB802B88E37E00F45FED /* PEGBUIKit.docc in Sources */,
 				BFC6AF052B89A20300E3D2E7 /* HorizontalViews.swift in Sources */,
@@ -315,6 +342,7 @@
 				BF2FABE52B88E7C500F45FED /* UIConstants.swift in Sources */,
 				BFC6AF202B89DF6000E3D2E7 /* PEGBUISearchTextField.swift in Sources */,
 				BFC6AF2D2B89F60600E3D2E7 /* PEGBWKWebview.swift in Sources */,
+				BF3963362B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

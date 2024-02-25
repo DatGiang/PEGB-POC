@@ -14,7 +14,7 @@ public struct NewsResponse: Decodable {
     public let title: String?
     let description: String?
     let url: String?
-    let urlToImage: String?
+    public let urlToImage: String?
     public let publishedAt: String?
     let content: String?
 }

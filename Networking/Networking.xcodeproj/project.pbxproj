@@ -16,6 +16,7 @@
 		BF3963142B8AD6C100253706 /* URLRequest+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3963132B8AD6C100253706 /* URLRequest+Extensions.swift */; };
 		BF3963162B8AD73700253706 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3963152B8AD73700253706 /* Network.swift */; };
 		BF3963182B8AD9BF00253706 /* HttpErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3963172B8AD9BF00253706 /* HttpErrors.swift */; };
+		BF3963412B8B00A200253706 /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3963402B8B00A200253706 /* PEGBCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		BF3963132B8AD6C100253706 /* URLRequest+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extensions.swift"; sourceTree = "<group>"; };
 		BF3963152B8AD73700253706 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BF3963172B8AD9BF00253706 /* HttpErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpErrors.swift; sourceTree = "<group>"; };
+		BF3963402B8B00A200253706 /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3963412B8B00A200253706 /* PEGBCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 				BF3962E42B8AD49600253706 /* Networking */,
 				BF3962F02B8AD49600253706 /* NetworkingTests */,
 				BF3962E32B8AD49600253706 /* Products */,
+				BF39633F2B8B00A200253706 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +118,14 @@
 				BF3963132B8AD6C100253706 /* URLRequest+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF39633F2B8B00A200253706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF3963402B8B00A200253706 /* PEGBCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

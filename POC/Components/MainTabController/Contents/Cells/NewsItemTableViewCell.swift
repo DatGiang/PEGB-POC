@@ -17,11 +17,10 @@ class NewsItemTableViewCell: UITableViewCell, View {
         return view
     }()
 
-    private lazy var thumbnailImageView: UIImageView = {
-        let view = UIImageView()
+    private lazy var thumbnailImageView: PEGBUIAsyncImageView = {
+        let view = PEGBUIAsyncImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.roundCorner(radius: 16)
-        view.image = UIImage(named: "ic_thumb")
         view.contentMode = .scaleAspectFill
         return view
     }()
@@ -152,6 +151,10 @@ extension NewsItemTableViewCell {
             self?.authorLabel.text = $0.author ?? ""
             self?.titleLabel.text = $0.title ?? ""
             self?.timeStampLabel.text = $0.publishedAt ?? ""
+            if let urlToImage = $0.urlToImage,
+               let urlImage = URL(string: urlToImage) {
+                self?.thumbnailImageView.url = urlImage
+            }
         }
     }
 }

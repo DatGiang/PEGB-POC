@@ -11,6 +11,7 @@
 		BF2FAB542B88E29C00F45FED /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2FAB492B88E29B00F45FED /* PEGBCore.framework */; };
 		BF2FAB592B88E29C00F45FED /* PEGBCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FAB582B88E29C00F45FED /* PEGBCoreTests.swift */; };
 		BF2FAB5A2B88E29C00F45FED /* PEGBCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2FAB4C2B88E29B00F45FED /* PEGBCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF3963392B8B004C00253706 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3963382B8B004C00253706 /* Log.swift */; };
 		BFC6AF3B2B8A35E900E3D2E7 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF3A2B8A35E900E3D2E7 /* Dynamic.swift */; };
 		BFC6AF402B8A390600E3D2E7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF3F2B8A390600E3D2E7 /* ViewModel.swift */; };
 		BFC6AF432B8A393000E3D2E7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF422B8A393000E3D2E7 /* View.swift */; };
@@ -33,6 +34,7 @@
 		BF2FAB4D2B88E29B00F45FED /* PEGBCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PEGBCore.docc; sourceTree = "<group>"; };
 		BF2FAB532B88E29C00F45FED /* PEGBCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PEGBCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2FAB582B88E29C00F45FED /* PEGBCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBCoreTests.swift; sourceTree = "<group>"; };
+		BF3963382B8B004C00253706 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		BFC6AF3A2B8A35E900E3D2E7 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		BFC6AF3F2B8A390600E3D2E7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BFC6AF422B8A393000E3D2E7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		BF2FAB4B2B88E29B00F45FED /* PEGBCore */ = {
 			isa = PBXGroup;
 			children = (
+				BF3963372B8B004400253706 /* Log */,
 				BFC6AFED2B8A669900E3D2E7 /* Startable */,
 				BFC6AF412B8A391E00E3D2E7 /* View */,
 				BFC6AF3E2B8A38EB00E3D2E7 /* ViewModel */,
@@ -95,6 +98,14 @@
 				BF2FAB582B88E29C00F45FED /* PEGBCoreTests.swift */,
 			);
 			path = PEGBCoreTests;
+			sourceTree = "<group>";
+		};
+		BF3963372B8B004400253706 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				BF3963382B8B004C00253706 /* Log.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 		BFC6AF392B8A35E900E3D2E7 /* Dynamic */ = {
@@ -240,6 +251,7 @@
 			files = (
 				BFC6AFEF2B8A669900E3D2E7 /* Startable.swift in Sources */,
 				BFC6AF432B8A393000E3D2E7 /* View.swift in Sources */,
+				BF3963392B8B004C00253706 /* Log.swift in Sources */,
 				BF2FAB4E2B88E29B00F45FED /* PEGBCore.docc in Sources */,
 				BFC6AF402B8A390600E3D2E7 /* ViewModel.swift in Sources */,
 				BFC6AF3B2B8A35E900E3D2E7 /* Dynamic.swift in Sources */,

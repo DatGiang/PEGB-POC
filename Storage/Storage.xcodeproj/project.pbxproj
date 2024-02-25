@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF39633C2B8B008600253706 /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39633B2B8B008600253706 /* PEGBCore.framework */; };
 		BFC6AF5C2B8A4FD600E3D2E7 /* Storage.docc in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF5B2B8A4FD600E3D2E7 /* Storage.docc */; };
 		BFC6AF622B8A4FD700E3D2E7 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC6AF572B8A4FD600E3D2E7 /* Storage.framework */; };
 		BFC6AF672B8A4FD700E3D2E7 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF662B8A4FD700E3D2E7 /* StorageTests.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF39633B2B8B008600253706 /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC6AF572B8A4FD600E3D2E7 /* Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC6AF5A2B8A4FD600E3D2E7 /* Storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
 		BFC6AF5B2B8A4FD600E3D2E7 /* Storage.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Storage.docc; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF39633C2B8B008600253706 /* PEGBCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF39633A2B8B008600253706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF39633B2B8B008600253706 /* PEGBCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BFC6AF4D2B8A4FD600E3D2E7 = {
 			isa = PBXGroup;
 			children = (
 				BFC6AF592B8A4FD600E3D2E7 /* Storage */,
 				BFC6AF652B8A4FD700E3D2E7 /* StorageTests */,
 				BFC6AF582B8A4FD600E3D2E7 /* Products */,
+				BF39633A2B8B008600253706 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

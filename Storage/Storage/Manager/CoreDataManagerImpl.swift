@@ -7,6 +7,7 @@
 
 import CoreData
 import Foundation
+import PEGBCore
 
 public class CoreDataManagerImpl: CoreDataManager {
     static let modelName = "DataModel"
@@ -82,8 +83,8 @@ public class CoreDataManagerImpl: CoreDataManager {
             do {
                 try self.privateManagedObjectContext.saveIfNeeded()
             } catch {
-                print("Unable to Save Changes of Private Managed Object Context")
-                print("\(error), \(error.localizedDescription)")
+                printLog("Unable to Save Changes of Private Managed Object Context")
+                printLog("\(error), \(error.localizedDescription)")
             }
         }
     }
@@ -97,7 +98,7 @@ extension CoreDataManagerImpl {
         else { fatalError("Unable to Set Up Core Data Stack") }
         addPersistentStore(to: persistentStoreCoordinator)
         DispatchQueue.main.async {
-            print("Finished setting up Core Data")
+            printLog("Finished setting up Core Data")
         }
     }
 

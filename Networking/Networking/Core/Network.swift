@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PEGBCore
 
 public struct Network<R: Requestable> {
     private let session = URLSession.shared
@@ -71,10 +72,4 @@ private func requestFailureDescription<R: Requestable>(
 ) -> String {
     "Request failed: \(request.urlRequest.methodAndUrlDescription), " +
         "\(httpErrorData.underlyingError), message: \(httpErrorData.message)"
-}
-
-private func printLog(_ data: Any) {
-    #if DEBUG
-    print(data)
-    #endif
 }
