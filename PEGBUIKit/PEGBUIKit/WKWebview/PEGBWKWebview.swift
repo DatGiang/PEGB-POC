@@ -38,9 +38,9 @@ public class PEGBWKWebview: UIView, View {
             }
         }
     }
-    
+
     public var viewModel: PEGBWkWebViewModel?
-    
+
     public init(viewModel: PEGBWkWebViewModel?) {
         self.viewModel = viewModel
         super.init(frame: .zero)

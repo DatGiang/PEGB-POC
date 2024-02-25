@@ -118,10 +118,7 @@ extension LoginViewController {
     private func bindViewModel() {
         viewModel?.mainViewControllerNavigatable.bind { [weak self] in
             if $0 {
-                guard let self, let mainTabViewModel = self.viewModel?.mainTabViewModel
-                else { return }
-                let mainViewController: MainTabController = .init(viewModel: mainTabViewModel)
-                self.navigationController?.pushViewController(mainViewController, animated: true)
+                self?.dismiss(animated: true)
             }
         }
     }

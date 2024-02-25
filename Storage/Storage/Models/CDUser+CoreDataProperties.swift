@@ -16,7 +16,8 @@ extension CDUser {
         return NSFetchRequest<CDUser>(entityName: "CDUser")
     }
 
-    @NSManaged public var username: String?
     @NSManaged public var password: String?
+    @NSManaged public var username: String?
+    @NSManaged public var isLoggedIn: Bool
 
 }

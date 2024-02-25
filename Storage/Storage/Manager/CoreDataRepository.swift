@@ -19,6 +19,24 @@ public class CoreDataRepository<Entity: NSManagedObject> {
         self.context = context
     }
     
+    /// Adds a new NSManagedObject Entity in the database.
+    /// Provides the caller with the ability to apply changes to the object prior to persisting it
+    public func add(
+        _ body: @escaping (inout Entity) -> Void,
+        completion: (Result<Entity, Error>) -> Void
+    ) {
+        context.performAndWait {
+            var entity = Entity(context: context)
+            body(&entity)
+            do {
+                try context.save()
+                completion(.success(entity))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
     /// Performs a CoreData fetch request for the given generic Entity
     /// - Parameters:
     ///   - sortDescriptors: The [NSSortDescriptor] to be used when sorting the data, default is []
@@ -46,18 +64,12 @@ public class CoreDataRepository<Entity: NSManagedObject> {
         }
     }
     
-    /// Adds a new NSManagedObject Entity in the database.
-    /// Provides the caller with the ability to apply changes to the object prior to persisting it
-    public func add(
-        _ body: @escaping (inout Entity) -> Void,
-        completion: (Result<Entity, Error>) -> Void
-    ) {
+    /// Updates the NSManagedObject Entity in the database.
+    public func update(_ entity: Entity, completion: (Result<Void, Error>) -> Void) {
         context.performAndWait {
-            var entity = Entity(context: context)
-            body(&entity)
             do {
                 try context.save()
-                completion(.success(entity))
+                completion(.success(()))
             } catch {
                 completion(.failure(error))
             }

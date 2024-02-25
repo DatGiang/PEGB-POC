@@ -9,6 +9,7 @@ import Foundation
 import PEGBCore
 import PEGBUseCases
 import UIKit
+import Storage
 
 typealias NewsAndSave = (NewsResponse, Bool)
 
@@ -24,6 +25,7 @@ class BaseContentViewModel: NSObject, ViewModel {
     private var originalNews: [NewsResponse] = []
     var allNews: Dynamic<[NewsAndSave]> = .init([])
     var shownNews: Dynamic<[NewsAndSave]> = .init([])
+    var user = Dynamic<CDUser?>(nil)
     
     init(delegate: BaseContentViewModelDelegate?) {
         super.init()
@@ -34,6 +36,10 @@ class BaseContentViewModel: NSObject, ViewModel {
     func navigateToNewsDetails(at indexPath: IndexPath) {
         let news: NewsResponse = shownNews.value[indexPath.row].0
         delegate?.baseContentViewModelDidTapNews(news: news)
+    }
+    
+    func fetchUserInfo(user: CDUser) {
+        self.user.value = user
     }
     
     func fetchAllNews(news: [NewsResponse]) {

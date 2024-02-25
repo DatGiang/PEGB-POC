@@ -75,7 +75,6 @@ extension BaseContentViewController {
             navigationBarView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navigationBarView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
-        navigationBarView.avatarImageView.title = "A"
         navigationBarView.title = "Search"
     }
 
@@ -86,8 +85,6 @@ extension BaseContentViewController {
             searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: UIConstants.Padding.medium),
             searchTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
-        navigationBarView.avatarImageView.title = "A"
-        navigationBarView.title = "Search"
     }
     
     private func setupTableView() {
@@ -106,6 +103,9 @@ extension BaseContentViewController {
         viewModel?.shownNews.bind { [weak self] _ in
             self?.contentTableView.reloadData()
         }
+        viewModel?.user.bindAndFire(listener: { [weak self] in
+            self?.navigationBarView.avatarImageView.title = $0?.username?.last?.uppercased() ?? ""
+        })
     }
 }
 

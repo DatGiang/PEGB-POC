@@ -10,6 +10,7 @@
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <entity name="CDUser" representedClassName="CDUser" syncable="YES">
+        <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>

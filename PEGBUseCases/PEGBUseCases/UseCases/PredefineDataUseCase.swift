@@ -10,6 +10,7 @@ import PEGBCore
 import Storage
 
 public struct PredefineDataUseCase: Startable {
+    public init() {}
     private let userRepository: CoreDataRepository<CDUser> = .init(context: CoreDataManagerImpl.shared.backgroundManagedObjectContext)
     private static let users: [(username: String, password: String)] = [
         ("usera", "passworda"),

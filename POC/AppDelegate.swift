@@ -23,9 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     private func runStartable() {
         var newsDataSynchronizer: NewsDataSynchronizationUseCase = .init()
-        newsDataSynchronizer.dataChangedListener = { [weak self] in
-            NotificationCenter.default.post(name: .NewsDataSynchronizerChanged, object: nil)
-        }
+        newsDataSynchronizer.dataChangedListener = { NotificationCenter.default.post(name: .NewsDataSynchronizerChanged, object: nil) }
         let startables: [Startable] = [
             PredefineDataUseCase(),
             newsDataSynchronizer
@@ -34,10 +32,22 @@ extension AppDelegate {
     }
     
     private func setupMainView() {
-        let loginViewController: LoginViewController = .init(viewModel: LoginViewModel())
-        let rootNavigationController: UINavigationController = .init(rootViewController: loginViewController)
+        let mainViewController: MainTabController = MainTabController(viewModel: MainTabViewModel())
+        let rootNavigationController: UINavigationController = .init(rootViewController: mainViewController)
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
+        
+        UserAuthenticationUseCase().getLoggedInUser {
+            switch $0 {
+            case .success:
+                break
+            case .failure:
+                let login: LoginViewController = .init(viewModel: LoginViewModel())
+                login.modalPresentationStyle = .fullScreen
+                rootNavigationController.present(login, animated: true)
+                break
+            }
+        }
     }
 }
 

@@ -17,6 +17,17 @@ public struct NewsResponse: Decodable {
     public let urlToImage: String?
     public let publishedAt: String?
     public let content: String?
+    
+    public init(author: String?, title: String?, url: String?, urlToImage: String?, publishedAt: String?, content: String?) {
+        self.source = nil
+        self.description = nil
+        self.author = author
+        self.title = title
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.content = content
+    }
 }
 
 // MARK: - Source

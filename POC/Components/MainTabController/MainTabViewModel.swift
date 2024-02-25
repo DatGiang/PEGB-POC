@@ -9,11 +9,13 @@ import Foundation
 import PEGBCore
 import PEGBUseCases
 import UIKit
+import Storage
 
 class MainTabViewModel: NSObject, ViewModel {
     let isLogout = Dynamic<Bool>(false)
     var newsDetailsNavigatable = Dynamic<Bool>(false)
 
+    var loginViewModel: LoginViewModel!
     var topHeadlinesViewModel: BaseContentViewModel!
     var savedNewsViewModel: BaseContentViewModel!
     var newsDetailsViewModel: NewsDetailsViewModel!
@@ -28,13 +30,24 @@ class MainTabViewModel: NSObject, ViewModel {
             self.topHeadlinesViewModel.reload()
             self.savedNewsViewModel.reload()
         }
+        
+        UserAuthenticationUseCase().getLoggedInUser { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .failure: break
+            case let .success(user):
+                self.topHeadlinesViewModel.fetchUserInfo(user: user)
+                self.savedNewsViewModel.fetchUserInfo(user: user)
+            }
+        }
     }
 
     func getTopHeadlinesNews() {
         NewsRequesterUseCase().getTopHeadlines { [weak self] in
             guard let self else { return }
             switch $0 {
-            case .failure: break
+            case .failure:
+                (self.savedNewsViewModel as? SavedNewsViewModel)?.loadOffline()
             case let .success(news):
                 self.topHeadlinesViewModel.fetchAllNews(news: news)
                 self.savedNewsViewModel.fetchAllNews(news: news)
@@ -45,7 +58,16 @@ class MainTabViewModel: NSObject, ViewModel {
 
 extension MainTabViewModel: BaseContentViewModelDelegate {
     func baseContentViewModelDidTapLogout() {
-        isLogout.value = true
+        UserAuthenticationUseCase().logout { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .failure:
+                break
+            case let .success(news):
+                loginViewModel = LoginViewModel()
+                self.isLogout.value = true
+            }
+        }
     }
 
     func baseContentViewModelDidTapNews(news: NewsResponse) {
