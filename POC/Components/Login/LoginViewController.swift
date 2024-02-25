@@ -21,7 +21,6 @@ class LoginViewController: BaseViewController, View {
         let view = PEGBUITextField()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Username"
-        view.text = "usera"
         return view
     }()
 
@@ -30,7 +29,6 @@ class LoginViewController: BaseViewController, View {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.placeholder = "Password"
         view.isSecureTextEntry = true
-        view.text = "passworda"
         return view
     }()
 
@@ -61,10 +59,15 @@ class LoginViewController: BaseViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        hideKeyboardWhenTappedAround()
     }
 
     @objc private func didTapLogin() {
         viewModel?.login(username: usernameTextField.text, password: passwordTextField.text)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -121,5 +124,11 @@ extension LoginViewController {
                 self?.dismiss(animated: true)
             }
         }
+    }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
 }

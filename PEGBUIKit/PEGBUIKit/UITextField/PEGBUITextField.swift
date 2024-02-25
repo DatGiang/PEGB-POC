@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+public protocol PEGBUITextFieldDelegate: AnyObject {
+    func textFieldDidChange(_ textField: PEGBUITextField)
+}
+
 public class PEGBUITextField: UIView {
     public var placeholder: String? {
         get { textField.placeholder }
@@ -41,8 +45,11 @@ public class PEGBUITextField: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clearButtonMode = .whileEditing
         view.textAlignment = .center
+        view.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return view
     }()
+    
+    public weak var delegate: PEGBUITextFieldDelegate?
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,6 +59,10 @@ public class PEGBUITextField: UIView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
+    }
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        delegate?.textFieldDidChange(self)
     }
 }
 

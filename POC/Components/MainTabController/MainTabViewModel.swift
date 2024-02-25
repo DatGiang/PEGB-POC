@@ -23,21 +23,25 @@ class MainTabViewModel: NSObject, ViewModel {
         super.init()
         topHeadlinesViewModel = TopHeadlinesViewModel(delegate: self)
         savedNewsViewModel = SavedNewsViewModel(delegate: self)
+        
+        let fetchUser = {
+            UserAuthenticationUseCase().getLoggedInUser { [weak self] in
+                guard let self else { return }
+                switch $0 {
+                case .failure: break
+                case let .success(user):
+                    self.topHeadlinesViewModel.fetchUserInfo(user: user)
+                    self.savedNewsViewModel.fetchUserInfo(user: user)
+                }
+            }
+        }
 
+        fetchUser()
         NotificationCenter.default.addObserver(forName: .SavedNewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
             guard let self else { return }
             self.topHeadlinesViewModel.reload()
             self.savedNewsViewModel.reload()
-        }
-        
-        UserAuthenticationUseCase().getLoggedInUser { [weak self] in
-            guard let self else { return }
-            switch $0 {
-            case .failure: break
-            case let .success(user):
-                self.topHeadlinesViewModel.fetchUserInfo(user: user)
-                self.savedNewsViewModel.fetchUserInfo(user: user)
-            }
+            fetchUser()
         }
     }
 

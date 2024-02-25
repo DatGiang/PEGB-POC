@@ -37,8 +37,7 @@ extension AppDelegate {
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
         
-        NotificationCenter.default.addObserver(forName: .SavedNewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
-            guard let self else { return }
+        let checkAuthenticationState = {
             UserAuthenticationUseCase().getLoggedInUser {
                 switch $0 {
                 case .success:
@@ -50,6 +49,11 @@ extension AppDelegate {
                     break
                 }
             }
+        }
+        
+        checkAuthenticationState()
+        NotificationCenter.default.addObserver(forName: .SavedNewsDataSynchronizerChanged, object: nil, queue: nil) { _ in
+            checkAuthenticationState()
         }
     }
 }
