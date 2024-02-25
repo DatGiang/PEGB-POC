@@ -12,7 +12,7 @@ import PEGBUseCases
 import UIKit
 
 class NewsDetailsViewModel: NSObject, ViewModel {
-    private let newsData: NewsDataSynchronizationUseCase = .init()
+    private let saveNewsData: UserAuthenticationUseCase = .init()
     let news: Dynamic<NewsResponse>
     var navigationViewModel: NewsDetailNavigationViewModel!
     var webViewModel: PEGBWkWebViewModel!
@@ -27,7 +27,7 @@ class NewsDetailsViewModel: NSObject, ViewModel {
         navigationViewModel = .init(delegate: self)
         webViewModel = .init(delegate: self)
         getSaveStatus()
-        NotificationCenter.default.addObserver(forName: .NewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
+        NotificationCenter.default.addObserver(forName: .SavedNewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
             guard let self else { return }
             self.getSaveStatus()
         }
@@ -36,12 +36,12 @@ class NewsDetailsViewModel: NSObject, ViewModel {
 
 extension NewsDetailsViewModel {
     private func getSaveStatus() {
-        newsData.get(news: news.value) {
+        saveNewsData.getSavedNews(news: news.value) { [weak self] in
             switch $0 {
             case let .failure(error):
-                isSaved.value = false
+                self?.isSaved.value = false
             case .success:
-                isSaved.value = true
+                self?.isSaved.value = true
             }
         }
     }
@@ -49,7 +49,7 @@ extension NewsDetailsViewModel {
 
 extension NewsDetailsViewModel: NewsDetailNavigationViewModelDelegate {
     func didTapClose() { isCloseNewsDetails.value = true }
-    func didTapBookmark() { newsData.saveOrDelete(news: news.value) { _ in } }
+    func didTapBookmark() { saveNewsData.addOrRemoveSavedNews(news: news.value) { _ in } }
 }
 
 extension NewsDetailsViewModel: PEGBWkWebViewModelDelegate {

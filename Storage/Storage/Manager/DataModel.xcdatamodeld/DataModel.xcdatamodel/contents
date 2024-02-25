@@ -13,5 +13,6 @@
         <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="savedNews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDNews"/>
     </entity>
 </model>

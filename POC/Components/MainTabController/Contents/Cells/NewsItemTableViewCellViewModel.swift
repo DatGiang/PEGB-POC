@@ -17,7 +17,7 @@ class NewsItemTableViewCellViewModel: NSObject, ViewModel {
     }
     
     func onTapBookmark() {
-        let newsDataSynchronize: NewsDataSynchronizationUseCase = .init()
-        newsDataSynchronize.saveOrDelete(news: news.value.0) { _ in }
+        let savedNewsDataSynchronize: UserAuthenticationUseCase = .init()
+        savedNewsDataSynchronize.addOrRemoveSavedNews(news: news.value.0) { _ in }
     }
 }

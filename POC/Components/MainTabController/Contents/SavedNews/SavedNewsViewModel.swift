@@ -17,7 +17,7 @@ class SavedNewsViewModel: BaseContentViewModel {
     }
     
     func loadOffline() {
-        newsData.getAll { [weak self] in
+        savedNewsData.getListSavedNews { [weak self] in
             switch $0 {
             case let .success(listCDNews):
                 self?.shownNews.value = listCDNews.map {

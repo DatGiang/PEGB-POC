@@ -8,5 +8,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let NewsDataSynchronizerChanged = Notification.Name("com.pegb.POC.NewsDataSynchronizerChanged")
+    static let SavedNewsDataSynchronizerChanged = Notification.Name("com.pegb.POC.SavedNewsDataSynchronizerChanged")
 }

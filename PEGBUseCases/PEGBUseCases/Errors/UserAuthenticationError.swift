@@ -10,3 +10,7 @@ import Foundation
 enum UserAuthenticationError: Error {
     case userNotFound
 }
+
+enum NewsCachingError: Error {
+    case notFound
+}

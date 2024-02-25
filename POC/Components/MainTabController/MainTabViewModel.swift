@@ -12,7 +12,6 @@ import UIKit
 import Storage
 
 class MainTabViewModel: NSObject, ViewModel {
-    let isLogout = Dynamic<Bool>(false)
     var newsDetailsNavigatable = Dynamic<Bool>(false)
 
     var loginViewModel: LoginViewModel!
@@ -25,7 +24,7 @@ class MainTabViewModel: NSObject, ViewModel {
         topHeadlinesViewModel = TopHeadlinesViewModel(delegate: self)
         savedNewsViewModel = SavedNewsViewModel(delegate: self)
 
-        NotificationCenter.default.addObserver(forName: .NewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
+        NotificationCenter.default.addObserver(forName: .SavedNewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
             guard let self else { return }
             self.topHeadlinesViewModel.reload()
             self.savedNewsViewModel.reload()
@@ -58,16 +57,7 @@ class MainTabViewModel: NSObject, ViewModel {
 
 extension MainTabViewModel: BaseContentViewModelDelegate {
     func baseContentViewModelDidTapLogout() {
-        UserAuthenticationUseCase().logout { [weak self] in
-            guard let self else { return }
-            switch $0 {
-            case .failure:
-                break
-            case let .success(news):
-                loginViewModel = LoginViewModel()
-                self.isLogout.value = true
-            }
-        }
+        UserAuthenticationUseCase().logout { _ in }
     }
 
     func baseContentViewModelDidTapNews(news: NewsResponse) {

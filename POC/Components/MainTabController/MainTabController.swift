@@ -80,14 +80,6 @@ extension MainTabController {
 
 extension MainTabController {
     private func bindViewModel() {
-        viewModel?.isLogout.bind { [weak self] in
-            guard let self, let loginViewModel = self.viewModel?.loginViewModel else { return }
-            if $0 {
-                let loginVC = LoginViewController(viewModel: loginViewModel)
-                loginVC.modalPresentationStyle = .fullScreen
-                self.navigationController?.present(loginVC, animated: true)
-            }
-        }
         viewModel?.newsDetailsNavigatable.bind { [weak self] in
             if $0 {
                 guard let self, let newsDetailsViewModel = self.viewModel?.newsDetailsViewModel else { return }

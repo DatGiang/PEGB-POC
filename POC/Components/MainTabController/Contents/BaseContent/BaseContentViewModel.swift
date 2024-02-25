@@ -19,7 +19,7 @@ protocol BaseContentViewModelDelegate: AnyObject {
 }
 
 class BaseContentViewModel: NSObject, ViewModel {
-    let newsData: NewsDataSynchronizationUseCase = .init()
+    let savedNewsData: UserAuthenticationUseCase = .init()
     var navigationViewModel: PEGBUINavigationBarViewModel!
     private weak var delegate: BaseContentViewModelDelegate?
     private var originalNews: [NewsResponse] = []
@@ -44,12 +44,12 @@ class BaseContentViewModel: NSObject, ViewModel {
     
     func fetchAllNews(news: [NewsResponse]) {
         originalNews = news
-        mergeRemoteAndLocalNews(from: news)
+        mergeRemoteAndSavedNews(from: news)
         bindShowNews()
     }
     
     func reload() {
-        mergeRemoteAndLocalNews(from: originalNews)
+        mergeRemoteAndSavedNews(from: originalNews)
         bindShowNews()
     }
     
@@ -78,8 +78,8 @@ extension BaseContentViewModel: PEGBUINavigationBarViewModelDelegate {
 }
 
 extension BaseContentViewModel {
-    private func mergeRemoteAndLocalNews(from remoteNews: [NewsResponse]) {
-        newsData.getAll { [weak self] in
+    private func mergeRemoteAndSavedNews(from remoteNews: [NewsResponse]) {
+        savedNewsData.getListSavedNews { [weak self] in
             guard let self else { return }
             switch $0 {
             case let .failure(error):

@@ -9,6 +9,7 @@ import Foundation
 
 public enum DateFormat: String {
     case iso8601DateFormat1 = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    case calendarFormat = "dd MMM, yyyy"
 }
 
 extension String {
@@ -21,5 +22,10 @@ extension String {
         dateFormatter.dateFormat = format
         let date = dateFormatter.date(from: self)
         return date
+    }
+    
+    public func to(other format: DateFormat) -> String {
+        let date = convertToDate(with: .iso8601DateFormat1)
+        return date?.toString(by: format.rawValue) ?? ""
     }
 }

@@ -155,7 +155,7 @@ extension NewsItemTableViewCell {
         viewModel?.news.bindAndFire { [weak self] in
             self?.authorLabel.text = $0.0.author ?? ""
             self?.titleLabel.text = $0.0.title ?? ""
-            self?.timeStampLabel.text = $0.0.publishedAt ?? ""
+            self?.timeStampLabel.text = $0.0.publishedAt?.to(other: .calendarFormat) ?? ""
             self?.bookmarkButton.setImage(UIImage(named: $0.1 ? "bookmark.fill" : "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
             if let urlToImage = $0.0.urlToImage,
                let urlImage = URL(string: urlToImage) {

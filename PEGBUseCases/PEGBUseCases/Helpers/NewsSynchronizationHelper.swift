@@ -10,8 +10,23 @@ import Storage
 
 struct NewsSynchronizationHelper {
     private let newsRepository: CoreDataRepository<CDNews> = .init(context: CoreDataManagerImpl.shared.publishableManagedObjectContext)
+    
+    func saveIfNeeded(news: NewsResponse, completion: SaveAndGetNewsResult) {
+        newsRepository.fetch(predicate: NSPredicate(format: "url == %@", news.url ?? "")) {
+            switch $0 {
+            case .failure:
+                self.saveNews(news: news, completion: completion)
+            case let .success(existings):
+                guard let cdNews = existings.first else {
+                    self.saveNews(news: news, completion: completion)
+                    return
+                }
+                completion(.success(cdNews))
+            }
+        }
+    }
 
-    func saveNews(news: NewsResponse, completion: SaveNewsResult) {
+    func saveNews(news: NewsResponse, completion: SaveAndGetNewsResult) {
         newsRepository.add { cdNews in
             cdNews.author = news.author
             cdNews.title = news.title
@@ -22,7 +37,7 @@ struct NewsSynchronizationHelper {
             cdNews.content = news.content
         } completion: {
             switch $0 {
-            case .success: completion(.success(()))
+            case let .success(news): completion(.success(news))
             case let .failure(error): completion(.failure(error))
             }
         }

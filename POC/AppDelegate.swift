@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     private func runStartable() {
-        var newsDataSynchronizer: NewsDataSynchronizationUseCase = .init()
-        newsDataSynchronizer.dataChangedListener = { NotificationCenter.default.post(name: .NewsDataSynchronizerChanged, object: nil) }
+        var userData: UserAuthenticationUseCase = .init()
+        userData.dataChangedListener = { NotificationCenter.default.post(name: .SavedNewsDataSynchronizerChanged, object: nil) }
         let startables: [Startable] = [
             PredefineDataUseCase(),
-            newsDataSynchronizer
+            userData
         ]
         startables.forEach { $0.start() }
     }
@@ -37,15 +37,18 @@ extension AppDelegate {
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
         
-        UserAuthenticationUseCase().getLoggedInUser {
-            switch $0 {
-            case .success:
-                break
-            case .failure:
-                let login: LoginViewController = .init(viewModel: LoginViewModel())
-                login.modalPresentationStyle = .fullScreen
-                rootNavigationController.present(login, animated: true)
-                break
+        NotificationCenter.default.addObserver(forName: .SavedNewsDataSynchronizerChanged, object: nil, queue: nil) { [weak self] _ in
+            guard let self else { return }
+            UserAuthenticationUseCase().getLoggedInUser {
+                switch $0 {
+                case .success:
+                    break
+                case .failure:
+                    let login: LoginViewController = .init(viewModel: LoginViewModel())
+                    login.modalPresentationStyle = .fullScreen
+                    rootNavigationController.present(login, animated: true)
+                    break
+                }
             }
         }
     }
