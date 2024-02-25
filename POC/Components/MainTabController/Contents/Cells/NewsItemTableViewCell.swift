@@ -54,7 +54,7 @@ class NewsItemTableViewCell: UITableViewCell, View {
     private lazy var bookmarkButton: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setImage(UIImage(named: "bookmark.fill")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        view.setImage(UIImage(named: "bookmark")?.withRenderingMode(.alwaysOriginal), for: .normal)
         return view
     }()
 
@@ -122,7 +122,6 @@ class NewsItemTableViewCell: UITableViewCell, View {
         NSLayoutConstraint.activate([
             authorLabel.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -UIConstants.Padding.small),
             authorLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            authorLabel.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
         ])
     }
 

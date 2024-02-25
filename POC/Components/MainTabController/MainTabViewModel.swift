@@ -41,8 +41,8 @@ extension MainTabViewModel: BaseContentViewModelDelegate {
         isLogout.value = true
     }
 
-    func baseContentViewModelDidTapNews() {
-        newsDetailsViewModel = .init()
+    func baseContentViewModelDidTapNews(news: NewsResponse) {
+        newsDetailsViewModel = .init(news: news)
         newsDetailsNavigatable.value = true
     }
 }

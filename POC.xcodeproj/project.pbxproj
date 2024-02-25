@@ -18,6 +18,7 @@
 		BF3963192B8AE0C600253706 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3963022B8AD49700253706 /* Networking.framework */; };
 		BF39631A2B8AE0C600253706 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF3963022B8AD49700253706 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF39632C2B8AEEE800253706 /* NewsItemTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39632B2B8AEEE800253706 /* NewsItemTableViewCellViewModel.swift */; };
+		BF97216B2B8B0ADB00E47CF6 /* OfflineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF97216A2B8B0ADB00E47CF6 /* OfflineViewModel.swift */; };
 		BFC6AF002B899FED00E3D2E7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */; };
 		BFC6AF0C2B89A4BC00E3D2E7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF0B2B89A4BC00E3D2E7 /* MainTabController.swift */; };
 		BFC6AF142B89C8A000E3D2E7 /* PEGBUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF132B89C8A000E3D2E7 /* PEGBUINavigationBar.swift */; };
@@ -147,6 +148,7 @@
 		BF2FABD02B88E41100F45FED /* PEGBUIKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PEGBUIKit.xcodeproj; path = PEGBUIKit/PEGBUIKit.xcodeproj; sourceTree = "<group>"; };
 		BF3962FC2B8AD49600253706 /* Networking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Networking.xcodeproj; path = Networking/Networking.xcodeproj; sourceTree = "<group>"; };
 		BF39632B2B8AEEE800253706 /* NewsItemTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		BF97216A2B8B0ADB00E47CF6 /* OfflineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewModel.swift; sourceTree = "<group>"; };
 		BFC6AEFF2B899FED00E3D2E7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BFC6AF0B2B89A4BC00E3D2E7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		BFC6AF132B89C8A000E3D2E7 /* PEGBUINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEGBUINavigationBar.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 			children = (
 				BFC6AF4A2B8A4A6100E3D2E7 /* NavigationBar */,
 				BFC6AF322B8A20D400E3D2E7 /* OfflineView.swift */,
+				BF97216A2B8B0ADB00E47CF6 /* OfflineViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				BF2FABC62B88E3FF00F45FED /* LoginViewController.swift in Sources */,
 				BFC6AF192B89C99200E3D2E7 /* UIImage+Extension.swift in Sources */,
 				BF39632C2B8AEEE800253706 /* NewsItemTableViewCellViewModel.swift in Sources */,
+				BF97216B2B8B0ADB00E47CF6 /* OfflineViewModel.swift in Sources */,
 				BFC6AF452B8A421500E3D2E7 /* PEGBUINavigationBarViewModel.swift in Sources */,
 				BFC6AF472B8A447400E3D2E7 /* BaseContentViewModel.swift in Sources */,
 				BFC6AF2A2B89F5A800E3D2E7 /* NewsDetailsViewController.swift in Sources */,

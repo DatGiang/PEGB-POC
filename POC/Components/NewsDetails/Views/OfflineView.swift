@@ -6,30 +6,30 @@
 //
 
 import Foundation
+import PEGBCore
 import PEGBUIKit
 import UIKit
 
-class OfflineView: UIView {
+class OfflineView: UIView, View {
     private lazy var scrollView: PEGBUIScrollView = {
         let view = PEGBUIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var thumbnailImageView: UIImageView = {
-        let view = UIImageView()
+    private lazy var thumbnailImageView: PEGBUIAsyncImageView = {
+        let view = PEGBUIAsyncImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "ic_thumb")
+        view.contentMode = .scaleAspectFill
         return view
     }()
-    
+
     private lazy var authorLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.numberOfLines = 1
         view.font = UIFont.systemFont(ofSize: 10)
         view.textColor = .white
-        view.text = "Kyung Lah"
         return view
     }()
 
@@ -38,30 +38,41 @@ class OfflineView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.numberOfLines = 0
         view.font = UIFont.systemFont(ofSize: 16)
-        view.text = "Governor Newsom Announces Statewide Expansion of CA Notify, a Smart Phone Tool Designed to Slow the Spread of COVID-19"
         view.textColor = .white
         return view
     }()
     
+    private lazy var timeStampImageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(named: "calendar")
+        view.setHightlightColor(.white)
+        return view
+    }()
+
     private lazy var timeStampLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.numberOfLines = 1
         view.font = UIFont.systemFont(ofSize: 10)
         view.textColor = .white
-        view.text = "02 Oct, 2023"
         return view
     }()
-    
+
     private lazy var contentLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.numberOfLines = 0
         view.font = UIFont.systemFont(ofSize: 14)
-        view.text = "As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] As a Florida elementary school tries to contain a growing measles outbreak, the states top health official is giving advice that runs counter to science and may leave unvaccinated children at risk of… [+6871 chars] "
         view.textAlignment = .left
         return view
     }()
+
+    var viewModel: OfflineViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,8 +89,9 @@ extension OfflineView {
     private func setupViews() {
         setupScrollView()
         setupThumbnailImageView()
-        setupAuthorLabel()
         setupTimestampLabel()
+        setupTimeStampImageView()
+        setupAuthorLabel()
         setupTitleLabel()
         setupContentLabel()
     }
@@ -100,18 +112,21 @@ extension OfflineView {
             thumbnailImageView.topAnchor.constraint(equalTo: scrollView.topContentViewAnchor),
             thumbnailImageView.leadingAnchor.constraint(equalTo: scrollView.leadingContentViewAnchor),
             thumbnailImageView.centerXAnchor.constraint(equalTo: scrollView.centerXContentViewAnchor),
-            thumbnailImageView.heightAnchor.constraint(equalToConstant: 200)
+            thumbnailImageView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 2),
         ])
     }
-    
+
     private func setupAuthorLabel() {
         thumbnailImageView.addSubview(authorLabel)
         NSLayoutConstraint.activate([
             authorLabel.bottomAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor, constant: -UIConstants.Padding.medium),
             authorLabel.leadingAnchor.constraint(equalTo: thumbnailImageView.leadingAnchor, constant: UIConstants.Padding.medium),
+            timeStampLabel.leadingAnchor.constraint(equalTo: authorLabel.trailingAnchor, constant: UIConstants.Padding.big),
         ])
+        timeStampLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        authorLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
-    
+
     private func setupTimestampLabel() {
         thumbnailImageView.addSubview(timeStampLabel)
         NSLayoutConstraint.activate([
@@ -120,6 +135,16 @@ extension OfflineView {
         ])
     }
     
+    private func setupTimeStampImageView() {
+        thumbnailImageView.addSubview(timeStampImageView)
+        NSLayoutConstraint.activate([
+            timeStampImageView.centerYAnchor.constraint(equalTo: timeStampLabel.centerYAnchor),
+            timeStampImageView.heightAnchor.constraint(equalTo: timeStampImageView.widthAnchor),
+            timeStampImageView.heightAnchor.constraint(equalToConstant: UIConstants.Sizes.tinyIconSize.height),
+            timeStampImageView.trailingAnchor.constraint(equalTo: timeStampLabel.leadingAnchor, constant: -UIConstants.Padding.small),
+        ])
+    }
+
     private func setupTitleLabel() {
         thumbnailImageView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
@@ -128,7 +153,7 @@ extension OfflineView {
             titleLabel.centerXAnchor.constraint(equalTo: thumbnailImageView.centerXAnchor),
         ])
     }
-    
+
     private func setupContentLabel() {
         scrollView.addSubview(contentLabel)
         NSLayoutConstraint.activate([
@@ -137,5 +162,20 @@ extension OfflineView {
             contentLabel.centerXAnchor.constraint(equalTo: scrollView.centerXContentViewAnchor),
             contentLabel.bottomAnchor.constraint(equalTo: scrollView.bottomContentViewAnchor, constant: -UIConstants.Padding.big),
         ])
+    }
+}
+
+extension OfflineView {
+    private func bindViewModel() {
+        viewModel?.news.bindAndFire { [weak self] in
+            self?.authorLabel.text = $0.author ?? ""
+            self?.titleLabel.text = $0.title ?? ""
+            self?.timeStampLabel.text = $0.publishedAt ?? ""
+            self?.contentLabel.text = $0.content
+            if let urlToImage = $0.urlToImage,
+               let urlImage = URL(string: urlToImage) {
+                self?.thumbnailImageView.url = urlImage
+            }
+        }
     }
 }

@@ -14,6 +14,7 @@ class NewsDetailsViewController: BaseViewController, View {
     private lazy var navigationBarView: NewsDetailsNavigation = {
         let view = NewsDetailsNavigation()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white.withAlphaComponent(0.7)
         return view
     }()
     
@@ -27,13 +28,14 @@ class NewsDetailsViewController: BaseViewController, View {
     private lazy var webView: PEGBWKWebview = {
         let view = PEGBWKWebview()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.navigationDelegate = self
+        view.isHidden = false
         return view
     }()
     
     private lazy var offlineView: OfflineView = {
         let view = OfflineView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
         return view
     }()
     
@@ -55,7 +57,6 @@ class NewsDetailsViewController: BaseViewController, View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        webView.url = "https://www.washingtonpost.com/technology/2024/02/22/moon-landing-intuitive-machines-odysseus-nasa-live/"
         bindViewModel()
     }
 }
@@ -64,6 +65,7 @@ extension NewsDetailsViewController {
     func setupViews() {
         setupStackView()
         setupNavigationBarView()
+        setupWebview()
         setupOfflineView()
     }
     
@@ -88,6 +90,7 @@ extension NewsDetailsViewController {
     }
     
     private func setupWebview() {
+        webView.viewModel = viewModel?.webViewModel
         stackView.addArrangedSubview(webView)
     }
     
@@ -100,6 +103,16 @@ extension NewsDetailsViewController {
     private func bindViewModel() {
         viewModel?.isCloseNewsDetails.bind { [weak self] in
             if $0 { self?.navigationController?.popViewController(animated: true) }
+        }
+        viewModel?.news.bindAndFire { [weak self] in
+            self?.webView.url = $0.url ?? ""
+        }
+        viewModel?.isWebviewLoadingFailed.bind { [weak self] in
+            if $0 {
+                self?.webView.isHidden = true
+                self?.offlineView.isHidden = false
+                self?.offlineView.viewModel = self?.viewModel?.offlineViewModel
+            }
         }
     }
 }

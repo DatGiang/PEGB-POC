@@ -11,7 +11,7 @@ import PEGBUseCases
 
 protocol BaseContentViewModelDelegate: AnyObject {
     func baseContentViewModelDidTapLogout()
-    func baseContentViewModelDidTapNews()
+    func baseContentViewModelDidTapNews(news: NewsResponse)
 }
 
 class BaseContentViewModel: NSObject, ViewModel {
@@ -26,8 +26,9 @@ class BaseContentViewModel: NSObject, ViewModel {
         self.delegate = delegate
     }
     
-    func navigateToNewsDetails() {
-        delegate?.baseContentViewModelDidTapNews()
+    func navigateToNewsDetails(at indexPath: IndexPath) {
+        let news: NewsResponse = shownNews.value[indexPath.row]
+        delegate?.baseContentViewModelDidTapNews(news: news)
     }
     
     func setAllNews(news: [NewsResponse]) {

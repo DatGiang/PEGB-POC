@@ -13,10 +13,10 @@ public struct NewsResponse: Decodable {
     public let author: String?
     public let title: String?
     let description: String?
-    let url: String?
+    public let url: String?
     public let urlToImage: String?
     public let publishedAt: String?
-    let content: String?
+    public let content: String?
 }
 
 // MARK: - Source

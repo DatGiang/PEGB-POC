@@ -21,6 +21,8 @@
 		BF39632E2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39632D2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift */; };
 		BF3963312B8AFF7500253706 /* PEGBCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3963302B8AFF7500253706 /* PEGBCore.framework */; };
 		BF3963362B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3963352B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift */; };
+		BF9721692B8B090F00E47CF6 /* PEGBWkWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9721682B8B090F00E47CF6 /* PEGBWkWebViewModel.swift */; };
+		BF9721792B8B11C000E47CF6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9721782B8B11C000E47CF6 /* UIImageView+Extension.swift */; };
 		BFC6AF052B89A20300E3D2E7 /* HorizontalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */; };
 		BFC6AF1B2B89CEAB00E3D2E7 /* PEGBAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */; };
 		BFC6AF202B89DF6000E3D2E7 /* PEGBUISearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */; };
@@ -54,6 +56,8 @@
 		BF39632D2B8AFF3F00253706 /* PEGBUIAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIAsyncImageView.swift; sourceTree = "<group>"; };
 		BF3963302B8AFF7500253706 /* PEGBCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PEGBCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3963352B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUIAsyncImageViewModel.swift; sourceTree = "<group>"; };
+		BF9721682B8B090F00E47CF6 /* PEGBWkWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBWkWebViewModel.swift; sourceTree = "<group>"; };
+		BF9721782B8B11C000E47CF6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		BFC6AF042B89A20300E3D2E7 /* HorizontalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViews.swift; sourceTree = "<group>"; };
 		BFC6AF1A2B89CEAB00E3D2E7 /* PEGBAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEGBAvatarView.swift; sourceTree = "<group>"; };
 		BFC6AF1F2B89DF6000E3D2E7 /* PEGBUISearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEGBUISearchTextField.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				BF2FABDD2B88E54E00F45FED /* UIView+Extension.swift */,
 				BF2FABDF2B88E6D300F45FED /* UIColor+Extension.swift */,
 				BF2FABE12B88E72C00F45FED /* UIColor+AppConfig.swift */,
+				BF9721782B8B11C000E47CF6 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC6AF2C2B89F60600E3D2E7 /* PEGBWKWebview.swift */,
+				BF9721682B8B090F00E47CF6 /* PEGBWkWebViewModel.swift */,
 			);
 			path = WKWebview;
 			sourceTree = "<group>";
@@ -341,7 +347,9 @@
 				BF2FABEC2B88E9B600F45FED /* PEGBUICircleImageView.swift in Sources */,
 				BF2FABE52B88E7C500F45FED /* UIConstants.swift in Sources */,
 				BFC6AF202B89DF6000E3D2E7 /* PEGBUISearchTextField.swift in Sources */,
+				BF9721692B8B090F00E47CF6 /* PEGBWkWebViewModel.swift in Sources */,
 				BFC6AF2D2B89F60600E3D2E7 /* PEGBWKWebview.swift in Sources */,
+				BF9721792B8B11C000E47CF6 /* UIImageView+Extension.swift in Sources */,
 				BF3963362B8AFFB200253706 /* PEGBUIAsyncImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

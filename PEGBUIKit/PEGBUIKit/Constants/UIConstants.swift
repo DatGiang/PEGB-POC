@@ -16,6 +16,7 @@ public enum UIConstants {
         public static let thumbnailSize: CGSize = .init(width: 128, height: 128)
         public static let avatarSize: CGSize = .init(width: 32, height: 32)
         public static let iconSize: CGSize = .init(width: 32, height: 32)
+        public static let tinyIconSize: CGSize = .init(width: 8, height: 8)
     }
 
     public enum Padding {
